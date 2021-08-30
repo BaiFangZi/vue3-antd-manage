@@ -1,0 +1,85 @@
+<template>
+  <div class="login-form-wrapper">
+    <a-form
+      class="login-form"
+      :label-col="formLayout.labelCol"
+      :wrapper-col="formLayout.wrapperCol"
+    >
+      <a-form-item label="用户名" v-bind="validateInfos.name">
+        <a-input v-model:value="loginForm.name" />
+      </a-form-item>
+      <a-form-item label="密码" v-bind="validateInfos.password">
+        <a-input v-model:value="loginForm.password" />
+      </a-form-item>
+      <a-form-item :wrapper-col="{ span: 14, offset: 4 }">
+        <a-button type="primary" @click.prevent="handleSubmit">登陆</a-button>
+        <a-button style="margin-left: 10px" @click="handleReset">重置</a-button>
+      </a-form-item>
+    </a-form>
+  </div>
+</template>
+<script setup>
+import { defineComponent, reactive, toRaw } from 'vue'
+import { Form } from 'ant-design-vue'
+const useForm = Form.useForm
+
+const loginForm = reactive({
+  name: '',
+  password: '',
+})
+
+const { resetFields, validate, validateInfos } = useForm(
+  loginForm,
+  reactive({
+    name: [
+      {
+        required: true,
+        message: '请输入账号',
+      },
+    ],
+    password: [
+      {
+        required: true,
+        message: '请输入密码',
+      },
+    ],
+  })
+)
+const handleSubmit = () => {
+  validate()
+    .then((res) => {
+      console.log(res, toRaw(loginForm))
+    })
+    .catch((err) => {
+      console.log('error', err)
+    })
+}
+const handleReset = () => {
+  resetFields()
+}
+const formLayout = {
+  labelCol: {
+    span: 4,
+  },
+  wrapperCol: {
+    span: 14,
+  },
+}
+</script>
+
+<style lang="scss">
+.login-form-wrapper {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .login-form {
+    width: 400px;
+    height: 240px;
+    // border: 1px solid #e8e8e8;
+    // border-radius: 5px;
+
+    // display: flex;
+  }
+}
+</style>
