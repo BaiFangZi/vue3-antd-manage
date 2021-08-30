@@ -1,0 +1,1 @@
+export { setupAntd } from './antd'
