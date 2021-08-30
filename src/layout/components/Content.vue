@@ -1,5 +1,5 @@
 <template>
   <div>
-    page3-1
+    content
   </div>
 </template>

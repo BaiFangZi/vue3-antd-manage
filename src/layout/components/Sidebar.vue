@@ -1,3 +1,3 @@
 <template>
-  <div>编辑器</div>
+  <div>sidebar</div>
 </template>
