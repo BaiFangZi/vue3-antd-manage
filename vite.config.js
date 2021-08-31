@@ -10,6 +10,15 @@ export default defineConfig({
       customComponentResolvers: [AntDesignVueResolver()],
     }),
   ],
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          'echarts': ['echarts']
+        }
+      }
+    }
+  },
   resolve: {
     alias: {
       '@': path.resolve(__dirname, 'src'),

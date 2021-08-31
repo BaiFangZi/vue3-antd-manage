@@ -21,8 +21,9 @@
 <script setup>
 import { defineComponent, reactive, toRaw } from 'vue'
 import { Form } from 'ant-design-vue'
+import { useRouter } from 'vue-router'
 const useForm = Form.useForm
-
+const router = useRouter()
 const loginForm = reactive({
   name: '',
   password: '',
@@ -49,6 +50,7 @@ const handleSubmit = () => {
   validate()
     .then((res) => {
       console.log(res, toRaw(loginForm))
+      router.replace('/dashboard')
     })
     .catch((err) => {
       console.log('error', err)
