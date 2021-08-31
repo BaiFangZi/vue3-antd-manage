@@ -1,60 +1,36 @@
 <template>
+  <HeaderCard />
+  <a-card class="introduction"> 
+    <h3>项目简介</h3>
+    <p>项目地址<a href=""></a></p>
+    <p>项目预览地址 ：<a href="">点击预览</a></p>
+  </a-card>
   <div id="views-chart"></div>
 </template>
 
-<script>
-// import { onMounted } from 'vue'
-// import echarts from '@/plugins/echarts'
-// export default {
-//   setup() {
-//     onMounted(() => {
-//       let viewsChart = echarts.init(document.querySelector('#views-chart'))
-//       let option = {
-//         title: {
-//           text: 'ECharts 入门示例',
-//         },
-//         tooltip: {},
-//         legend: {
-//           data: ['销量'],
-//         },
-//         xAxis: {
-//           data: ['衬衫', '羊毛衫', '雪纺衫', '裤子', '高跟鞋', '袜子'],
-//         },
-//         yAxis: {},
-//         series: [
-//           {
-//             name: '销量',
-//             type: 'line',
-//             data: [5, 20, 36, 10, 10, 20],
-//           },
-//         ],
-//       }
-//       viewsChart.setOption(option)
-//     })
-//   },
-// }
-</script>
-
 <script setup>
+import { EyeOutlined, StarOutlined } from '@ant-design/icons-vue'
+import HeaderCard from './HeaderCard.vue'
 import { useEcharts } from '@/hooks/useEcharts'
+
 const { setOption } = useEcharts('#views-chart')
 let option = {
   title: {
-    text: 'ECharts 入门示例',
+    text: '访问趋势',
   },
   tooltip: {},
   legend: {
-    data: ['销量'],
+    data: ['每日访问量'],
   },
   xAxis: {
-    data: ['衬衫', '羊毛衫', '雪纺衫', '裤子', '高跟鞋', '袜子'],
+    data: ['周一', '周二', '周三', '周四', '周五', '周六', '周日'],
   },
   yAxis: {},
   series: [
     {
       name: '销量',
       type: 'line',
-      data: [5, 20, 36, 10, 10, 20],
+      data: [5, 20, 36, 10, 10, 20, 23],
     },
   ],
 }
@@ -62,8 +38,13 @@ setOption(option)
 </script>
 
 <style lang="scss">
+.introduction {
+  margin-bottom: 30px;
+}
 #views-chart {
   // width: 300px;
+  background-color: #fff;
+  padding: 10px;
   width: 100%;
   height: 300px;
 }
