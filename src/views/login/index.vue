@@ -5,11 +5,11 @@
       :label-col="formLayout.labelCol"
       :wrapper-col="formLayout.wrapperCol"
     >
-      <a-form-item label="用户名" v-bind="validateInfos.name">
-        <a-input v-model:value="loginForm.name" />
+      <a-form-item label="用户名" v-bind="validateInfos.username">
+        <a-input v-model:value="loginForm.username" placeholder="admin/user" />
       </a-form-item>
       <a-form-item label="密码" v-bind="validateInfos.password">
-        <a-input v-model:value="loginForm.password" />
+        <a-input v-model:value="loginForm.password" placeholder="123456" />
       </a-form-item>
       <a-form-item :wrapper-col="{ span: 14, offset: 4 }">
         <a-button type="primary" @click.prevent="handleSubmit">登陆</a-button>
@@ -22,17 +22,18 @@
 import { defineComponent, reactive, toRaw } from 'vue'
 import { Form } from 'ant-design-vue'
 import { useRouter } from 'vue-router'
+import { loginIn } from '@/api/user'
 const useForm = Form.useForm
 const router = useRouter()
 const loginForm = reactive({
-  name: '',
+  username: '',
   password: '',
 })
 
 const { resetFields, validate, validateInfos } = useForm(
   loginForm,
   reactive({
-    name: [
+    username: [
       {
         required: true,
         message: '请输入账号',
@@ -49,8 +50,15 @@ const { resetFields, validate, validateInfos } = useForm(
 const handleSubmit = () => {
   validate()
     .then((res) => {
-      console.log(res, toRaw(loginForm))
-      router.replace('/dashboard')
+      console.log(toRaw(loginForm))
+      loginIn(toRaw(loginForm))
+        .then((res) => {
+          console.log(res)
+          router.replace('/dashboard')
+        })
+        .catch((err) => {
+          console.log(err)
+        })
     })
     .catch((err) => {
       console.log('error', err)

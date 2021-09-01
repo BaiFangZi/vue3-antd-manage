@@ -5,29 +5,12 @@ const routes = [
     name: 'Login',
     component: () => import('@/views/login/index.vue'),
   },
-  {
-    path: '/layout',
-    name: 'Layout',
-    component: () => import('@/layout/index.vue'),
-    children: [
-      {
-        path: '/dashboard',
-        name: 'Dashboard',
-        component: () => import('@/views/dashboard/index.vue'),
-      },
-      {
-        path: '/setting',
-        name: 'Setting',
-        component: () => import('@/views/setting/index.vue'),
-      }
-    ],
-  },
+ 
 ]
 
 const router = createRouter({
   history: createWebHistory(),
   routes,
 })
-console.log(router)
 
 export default router

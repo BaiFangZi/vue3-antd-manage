@@ -87,9 +87,4 @@ const handleChangeLanguage = ({ key }) => {
   color: #1890ff;
 }
 
-.logo {
-  height: 32px;
-  background: rgba(255, 255, 255, 0.3);
-  margin: 16px;
-}
 </style>
