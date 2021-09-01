@@ -3,16 +3,18 @@
     <Sidebar :collapsed="collapsed"></Sidebar>
     <a-layout>
       <Header>
-        <MenuUnfoldOutlined
-          v-if="collapsed"
-          class="trigger"
-          @click="() => (collapsed = !collapsed)"
-        />
-        <MenuFoldOutlined
-          v-else
-          class="trigger"
-          @click="() => (collapsed = !collapsed)"
-        />
+        <template v-slot:headerLeft>
+          <MenuUnfoldOutlined
+            v-if="collapsed"
+            class="trigger"
+            @click="() => (collapsed = !collapsed)"
+          />
+          <MenuFoldOutlined
+            v-else
+            class="trigger"
+            @click="() => (collapsed = !collapsed)"
+          />
+        </template>
       </Header>
       <Content></Content>
     </a-layout>

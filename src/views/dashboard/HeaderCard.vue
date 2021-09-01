@@ -4,7 +4,6 @@
       <a-col :span="6">
         <a-card>
           <a-statistic title="访问量" :value="11234">
-            <EyeOutlined />
             <template #prefix> </template>
           </a-statistic>
         </a-card>
@@ -25,7 +24,7 @@
             :value-style="{ color: '#cf1322' }"
           >
             <template #prefix>
-              <arrow-down-outlined />
+             
             </template>
           </a-statistic>
         </a-card>
@@ -39,7 +38,7 @@
             :value-style="{ color: '#cf1322' }"
           >
             <template #prefix>
-              <arrow-down-outlined />
+            
             </template>
           </a-statistic>
         </a-card>
