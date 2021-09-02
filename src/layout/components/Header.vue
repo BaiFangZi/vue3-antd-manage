@@ -49,9 +49,9 @@ const curLang = computed(() => {
 })
 
 const handleChangeLanguage = ({ key }) => {
-  localStorage.setItem('language', key)
+  // localStorage.setItem('language', key)
   locale.value = key
-  store.commit('app/SET_STATE', { key: 'lang', value: key })
+  store.commit('app/SET_LANG', key)
 }
 </script>
 

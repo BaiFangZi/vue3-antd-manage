@@ -1,20 +1,9 @@
-export default [
+export const constantRoutes = [
   {
-    path: '/layout',
+    path: '/',
     name: 'Layout',
     component: () => import('@/layout/index.vue'),
-    children: [
-      {
-        path: '/dashboard',
-        name: 'Dashboard',
-        component: () => import('@/views/dashboard/index.vue'),
-      },
-      {
-        path: '/setting',
-        name: 'Setting',
-        component: () => import('@/views/setting/index.vue'),
-      },
-    ],
+    redirect:'/dashboard',
+    children: [],
   },
-  
 ]

@@ -22,9 +22,12 @@
 import { defineComponent, reactive, toRaw } from 'vue'
 import { Form } from 'ant-design-vue'
 import { useRouter } from 'vue-router'
+
 import { loginIn } from '@/api/user'
+import { useStore } from 'vuex'
 const useForm = Form.useForm
 const router = useRouter()
+const store = useStore()
 const loginForm = reactive({
   username: '',
   password: '',
@@ -50,11 +53,12 @@ const { resetFields, validate, validateInfos } = useForm(
 const handleSubmit = () => {
   validate()
     .then((res) => {
-      console.log(toRaw(loginForm))
       loginIn(toRaw(loginForm))
         .then((res) => {
-          console.log(res)
-          router.replace('/dashboard')
+          const { auth } = res.data.data
+          store.commit('auth/GENERATE_ROUTES', auth)
+          // store.commit('auth/SET_AUTH', auth)
+          router.push('/dashboard')
         })
         .catch((err) => {
           console.log(err)
