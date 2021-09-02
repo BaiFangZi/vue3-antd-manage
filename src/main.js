@@ -3,10 +3,13 @@ import App from './App.vue'
 import router from '@/router'
 import store from '@/store'
 import i18n from '@/i18n'
+
+import nProgress from '@/plugins/nProgress'
 // 全局样式
 import '@/assets/global.scss'
 
 router.beforeEach((to, from, next) => {
+  nProgress.start()
   const token = store.getters['auth/token']
   console.log(token)
   // next()
@@ -36,7 +39,12 @@ router.beforeEach((to, from, next) => {
     }
   }
 })
+router.afterEach((to, from) => {
+  // to and from are both route objects.
+  //  setTimeout(()=> nProgress.done(),500)
 
+  nProgress.done()
+})
 const app = createApp(App)
 
 app.use(store).use(router).use(i18n).mount('#app')
