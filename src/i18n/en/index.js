@@ -1,7 +1,7 @@
+import common from './common'
+
 export default {
   message: {
-    common:{
-      language:'English'
-    }
+    common,
   },
 }

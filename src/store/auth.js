@@ -8,7 +8,6 @@ const state = {
 }
 const getters = {
   token: () => {
-   
     localStorage.setItem('access-token', state.auth)
     return state.auth
   },
@@ -40,7 +39,7 @@ export default {
 function traversalRoutes(routes, auth) {
   const result = []
   routes.forEach((r) => {
-    const { meta, children } = r
+    let { meta, children } = r
     if (meta.auth.includes(auth)) {
       //找到用户身份对应的路由
       if (children && children.length) {

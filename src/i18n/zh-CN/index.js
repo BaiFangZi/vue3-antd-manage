@@ -1,7 +1,7 @@
+import common from './common'
+
 export default {
   message: {
-    common: {
-      language: '中文简体',
-    },
+    common,
   },
 }

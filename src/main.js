@@ -3,7 +3,9 @@ import App from './App.vue'
 import router from '@/router'
 import store from '@/store'
 import i18n from '@/i18n'
-
+// import {setupAntd} from '@/plugins/antd'
+import 'ant-design-vue/dist/antd.css'
+import Antd from 'ant-design-vue'
 import nProgress from '@/plugins/nProgress'
 // 全局样式
 import '@/assets/global.scss'
@@ -46,5 +48,6 @@ router.afterEach((to, from) => {
   nProgress.done()
 })
 const app = createApp(App)
-
-app.use(store).use(router).use(i18n).mount('#app')
+// setupAntd(app)
+// app.use(Antd)
+app.use(store).use(router).use(i18n).use(Antd).mount('#app')

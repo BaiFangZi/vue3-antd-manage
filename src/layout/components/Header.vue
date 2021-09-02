@@ -7,7 +7,7 @@
       /></a>
 
       <a-dropdown>
-        <span style="width:60px" class="header-right-item">{{
+        <span style="width: 60px" class="header-right-item">{{
           $t('message.common.language')
         }}</span>
         <template #overlay>
@@ -44,7 +44,6 @@ import { useStore } from 'vuex'
 const { locale } = useI18n()
 const store = useStore()
 const curLang = computed(() => {
-  console.log(1232)
   return store.state.app.lang
 })
 
@@ -86,5 +85,4 @@ const handleChangeLanguage = ({ key }) => {
 .trigger:hover {
   color: #1890ff;
 }
-
 </style>
