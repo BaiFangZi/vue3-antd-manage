@@ -1,5 +1,18 @@
+.ant-table-wrapper,
+.ant-form {
+  // background-color: #fff;
+  // padding: 20px;
+}
 
-.ant-table-wrapper,.ant-form{
-  background-color: #fff;
-  padding: 20px;
+
+.table-title {
+  display: flex;
+  margin-bottom: 16px;
+  // justify-content: space-between;
+  // align-items: center;
+  .table-title-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 }

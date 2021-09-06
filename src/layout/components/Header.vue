@@ -12,10 +12,10 @@
         }}</span>
         <template #overlay>
           <a-menu @click="handleChangeLanguage">
-            <a-menu-item :disabled="curLang == 'zh_CN'" key="zh_CN">
+            <a-menu-item :disabled="curLocale == 'zh_CN'" key="zh_CN">
               中文简体
             </a-menu-item>
-            <a-menu-item :disabled="curLang == 'en'" key="en">
+            <a-menu-item :disabled="curLocale == 'en'" key="en">
               English</a-menu-item
             >
           </a-menu>
@@ -39,18 +39,18 @@
 <script setup>
 import { ref, computed } from 'vue'
 import { UserOutlined, GithubOutlined } from '@ant-design/icons-vue'
-import { useI18n } from 'vue-i18n'
+import { useLocal } from '@/hooks/useLocale'
+// import { useI18n } from 'vue-i18n'
 import { useStore } from 'vuex'
-const { locale } = useI18n()
+// const { locale } = useI18n()
 const store = useStore()
-const curLang = computed(() => {
-  return store.state.app.lang
-})
+const { changeLang, curLocale } = useLocal()
 
-const handleChangeLanguage = ({ key }) => {
-  // localStorage.setItem('language', key)
-  locale.value = key
+console.log()
+const handleChangeLanguage = async ({ key }) => {
+  await changeLang(key)
   store.commit('app/SET_LANG', key)
+  location.reload()
 }
 </script>
 

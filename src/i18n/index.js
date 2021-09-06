@@ -1,16 +1,15 @@
 import { message } from 'ant-design-vue'
 import { createI18n } from 'vue-i18n'
 
-
-
-
 async function createI18nOptions() {
   const locale = localStorage.getItem('language') || 'zh_CN'
-  let messagesDefault = await import(`./${locale}`)
-  let messages = messagesDefault.default
+  let messages = (await import(`./${locale}`)).default
+  // let messages = messagesDefault.default
   return {
     // legacy: false, // Composition API 模式
     globalInjection: true, // 全局注册 $t
+    silentTranslationWarn: true, // 消除控制台警告
+    silentFallbackWarn: true, // 消除控制台警告
     locale,
     messages: {
       [locale]: messages,
