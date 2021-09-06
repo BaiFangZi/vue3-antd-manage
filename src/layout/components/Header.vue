@@ -8,7 +8,7 @@
 
       <a-dropdown>
         <span style="width: 60px" class="header-right-item">{{
-          $t('message.common.language')
+          $t('common.language')
         }}</span>
         <template #overlay>
           <a-menu @click="handleChangeLanguage">

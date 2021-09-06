@@ -2,14 +2,14 @@ import { createApp } from 'vue'
 import App from './App.vue'
 import router from '@/router'
 import store from '@/store'
-import i18n from '@/i18n'
+import {setupI18n} from '@/i18n'
 // import {setupAntd} from '@/plugins/antd'
 import 'ant-design-vue/dist/antd.css'
 import Antd from 'ant-design-vue'
 import nProgress from '@/plugins/nProgress'
 // 全局样式
 import '@/assets/global.scss'
-
+import '@/assets/common.scss'
 router.beforeEach((to, from, next) => {
   nProgress.start()
   const token = store.getters['auth/token']
@@ -48,6 +48,9 @@ router.afterEach((to, from) => {
   nProgress.done()
 })
 const app = createApp(App)
-// setupAntd(app)
-// app.use(Antd)
-app.use(store).use(router).use(i18n).use(Antd).mount('#app')
+
+async function initApp(app) {
+  await setupI18n(app)
+  app.use(store).use(router).use(Antd).mount('#app')
+}
+initApp(app)

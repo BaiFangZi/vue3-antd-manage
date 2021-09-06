@@ -9,7 +9,9 @@
     >
       <template v-for="item in menuList" :key="item.path">
         <template v-if="!item.children">
-          <a-menu-item :key="item.path"> {{ item.meta.title }}</a-menu-item>
+          <a-menu-item v-if="!item.meta.noHidden" :key="item.path">
+            {{ $t(`sidebar.${item.meta.title}`) }}</a-menu-item
+          >
         </template>
         <template v-else>
           <SubMenu :menu-list="item"></SubMenu>
@@ -30,14 +32,12 @@ const SubMenu = {
   },
   template: `
   <a-sub-menu :key="menuList.path">
-     <template #title>{{ menuList.meta.title }}</template>
+     <template #title>{{ $t('sidebar.'+menuList.meta.title) }}</template>
      <template v-for="item in menuList.children" :key="item.path">
         <template v-if="!item.children">
           <a-menu-item :key="item.path">
-            <template #icon>
-              
-            </template>
-            {{ item.meta.title }}
+          
+           {{ $t('sidebar.'+item.meta.title)}}
           </a-menu-item>
         </template>
         <template v-else>
@@ -50,15 +50,18 @@ const SubMenu = {
 
 <script setup>
 import { useStore } from 'vuex'
-import { useRouter } from 'vue-router'
+import { useRouter, useRoute } from 'vue-router'
+import { ref, unref } from '@vue/reactivity'
 defineProps({
   collapsed: Boolean,
 })
 const store = useStore()
 const router = useRouter()
+const route = useRoute()
 const menuList = store.state.auth.menuList
-const handleGoRouter = ({key}) => {
-  console.log(key)
+const selectedKeys = ref([route.path])
+
+const handleGoRouter = ({ key }) => {
   router.push(key)
 }
 </script>

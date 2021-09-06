@@ -5,7 +5,6 @@
     <h3>项目简介</h3>
     <p>项目地址<a href=""></a></p>
     <p>项目预览地址 ：<a href="">点击预览</a></p>
-   
   </a-card>
   <div id="views-chart"></div>
 </template>

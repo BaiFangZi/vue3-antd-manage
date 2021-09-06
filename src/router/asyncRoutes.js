@@ -1,3 +1,9 @@
+import nestMenu from './medules/nestMenu'
+import component from './medules/component'
+import plugin from './medules/plugin'
+import chart from './medules/chart'
+import permission from './medules/permission'
+import realProject from './medules/realProject'
 export const asyncRoutes = [
   {
     path: '/dashboard',
@@ -5,8 +11,8 @@ export const asyncRoutes = [
     component: () => import('@/views/dashboard/index.vue'),
     meta: {
       title: 'dashboard', // 名称
-      auth: ['admin', 'user'],
-      noHidden: true,
+      auth: ['admin', 'user'], // 权限
+      // noHidden: true,  // 是否隐藏
     },
   },
   {
@@ -16,119 +22,22 @@ export const asyncRoutes = [
     meta: {
       title: 'setting',
       auth: ['admin', 'user'],
-      nodeHidden: true,
+      noHidden: true,
     },
   },
+  ...nestMenu,
+  ...component,
+  ...plugin,
+  ...chart,
+  ...permission,
+  ...realProject,
   {
-    path: '/nestMenu',
-    name: 'NestMenu',
-    component: () => import('@/views/nestMenu/index.vue'),
+    path: '/about',
+    name: 'About',
+    component: () => import('@/views/about/index.vue'),
     meta: {
-      title: 'nestMenu',
-      icon: '',
-      auth: ['admin', 'normal'],
-      // noHidden: true,
-      noBreadcrumbLink: true, //面包屑导航，显示为普通文本
+      auth: ['admin', 'user'],
+      title: 'about',
     },
-    children: [
-      {
-        path: '/page1',
-        name: 'Page1',
-        component: () => import('@/views/nestMenu/page1/index.vue'),
-        meta: {
-          title: 'page1',
-          icon: '',
-          auth: ['admin', 'normal'],
-          // noHidden: false,
-        },
-      },
-      {
-        path: '/page2',
-        name: 'Page2',
-        component: () => import('@/views/nestMenu/page2/index.vue'),
-        meta: {
-          title: 'page2',
-          icon: '',
-          auth: ['admin', 'normal'],
-          // noHidden: false,
-          noBreadcrumbLink: true,
-        },
-        children: [
-          {
-            path: '/page2-1',
-            name: 'Page2-1',
-            component: () => import('@/views/nestMenu/page2/page2-1.vue'),
-            meta: {
-              title: 'page2_1',
-              icon: '',
-              auth: ['admin', 'normal'],
-              // noHidden: false,
-            },
-          },
-          {
-            path: '/page2-2',
-            name: 'Page2-2',
-            component: () => import('@/views/nestMenu/page2/page2-2.vue'),
-            meta: {
-              title: 'page2_2',
-              icon: '',
-              auth: ['admin', 'normal'],
-              // noHidden: false,
-            },
-          },
-        ],
-      },
-      {
-        path: '/page3',
-        name: 'Page3',
-        component: () => import('@/views/nestMenu/page3/index.vue'),
-        meta: {
-          title: 'page3',
-          icon: '',
-          auth: ['admin', 'normal'],
-          // noHidden: false,
-        },
-        children: [
-          {
-            path: '/page3-1',
-            name: 'Page3-1',
-            component: () => import('@/views/nestMenu/page3/page3-1.vue'),
-            meta: {
-              title: 'page3_1',
-              icon: '',
-              auth: ['admin', 'normal'],
-              // noHidden: false,
-              noBreadcrumbLink: true,
-            },
-          },
-          {
-            path: '/page3-2',
-            name: 'Page3-2',
-            component: () => import('@/views/nestMenu/page3/page3-2/index.vue'),
-            meta: {
-              title: 'page3_2',
-              icon: '',
-              auth: ['admin', 'normal'],
-              // noHidden: false,
-            },
-            children: [
-              {
-                path: '/page3-2-1',
-                name: 'Page3-2-1',
-                component: () =>
-                  import('@/views/nestMenu/page3/page3-2/page3-2-1.vue'),
-                meta: {
-                  title: 'page3_2_1',
-                  icon: '',
-                  auth: ['admin', 'normal'],
-                  // noHidden: false,
-                  noBreadcrumbLink: true,
-                },
-              },
-            ],
-          },
-        ],
-      },
-    ],
   },
 ]
