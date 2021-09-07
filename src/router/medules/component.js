@@ -8,6 +8,9 @@ export default [
       auth: ['admin', 'user'],
       icon:'PicCenterOutlined'
     },
+    redirect:{
+      path:'/table',
+    },
     children: [
       {
         path: '/table',
@@ -16,6 +19,9 @@ export default [
         meta: {
           title: 'table',
           auth: ['admin', 'user'],
+        },
+        redirect:{
+          path:'/basic-table',
         },
         children: [
           {
@@ -38,6 +44,9 @@ export default [
           title: 'form',
           auth: ['admin', 'user'],
         },
+        redirect:{
+          path:'/basic-form',
+        },
         children: [
           {
             path: '/basic-form',
@@ -58,6 +67,9 @@ export default [
         meta: {
           title: 'modal',
           auth: ['admin', 'user'],
+        },
+        redirect:{
+          path:'/basic-modal',
         },
         children: [
           {
@@ -80,6 +92,9 @@ export default [
           title: 'drawer',
           auth: ['admin', 'user'],
         },
+        redirect:{
+          path:'/basic-drawer',
+        },
         children: [
           {
             path: '/basic-drawer',
@@ -100,6 +115,9 @@ export default [
         meta: {
           title: 'upload',
           auth: ['admin', 'user'],
+        },
+        redirect:{
+          path:'/basic-upload',
         },
         children: [
           {
@@ -122,6 +140,9 @@ export default [
           title: 'list',
           auth: ['admin', 'user'],
         },
+        redirect:{
+          path:'/basic-list',
+        },
         children: [
           {
             path: '/basic-list',
@@ -143,6 +164,9 @@ export default [
         meta: {
           title: 'tree',
           auth: ['admin', 'user'],
+        },
+        redirect:{
+          path:'/basic-tree',
         },
         children: [
           {

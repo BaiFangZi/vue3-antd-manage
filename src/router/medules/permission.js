@@ -8,6 +8,9 @@ export default [
       auth: ['admin', 'user'],
       icon:'KeyOutlined'
     },
+    redirect:{
+      path:'/btnPermission',
+    },
     children: [
       {
         path: '/btnPermission',

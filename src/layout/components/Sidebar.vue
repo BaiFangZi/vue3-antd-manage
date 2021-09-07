@@ -52,7 +52,8 @@ const SubMenu = {
 <script setup>
 import { useStore } from 'vuex'
 import { useRouter, useRoute } from 'vue-router'
-import { ref, unref } from '@vue/reactivity'
+import { computed, ref, unref } from '@vue/reactivity'
+import { watch } from '@vue/runtime-core'
 defineProps({
   collapsed: Boolean,
 })
@@ -60,7 +61,17 @@ const store = useStore()
 const router = useRouter()
 const route = useRoute()
 const menuList = store.state.auth.menuList
-const selectedKeys = ref([route.path])
+
+let selectedKeys = ref([])
+watch(
+  () => route.path,
+  () => {
+    selectedKeys.value = [route.path]
+  },
+  {
+    immediate: true,
+  }
+)
 
 const handleGoRouter = ({ key }) => {
   router.push(key)

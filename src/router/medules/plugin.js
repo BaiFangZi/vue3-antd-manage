@@ -8,6 +8,9 @@ export default [
       auth: ['admin', 'user'],
       icon:'BulbOutlined'
     },
+    redirect:{
+      path:'/excel',
+    },
     children: [
       {
         path: '/excel',

@@ -8,6 +8,9 @@ export default [
       auth: ['admin', 'user'],
       icon: 'BarChartOutlined',
     },
+    redirect:{
+      path:'/aMap',
+    },
     children: [
       {
         path: '/aMap',
@@ -35,6 +38,9 @@ export default [
         meta: {
           title: 'echarts',
           auth: ['admin', 'user'],
+        },
+        redirect:{
+          path:'/lineChart',
         },
         children: [
           {

@@ -4,6 +4,9 @@ export const constantRoutes = [
     name: 'Layout',
     component: () => import('@/layout/index.vue'),
     redirect:'/dashboard',
+    meta:{
+      title:'Layout'
+    },
     children: [],
   },
 ]

@@ -7,12 +7,14 @@ export default [
       title: 'nestMenu',
       icon: 'UnorderedListOutlined',
       auth: ['admin', 'normal'],
-      // noHidden: true,
       noBreadcrumbLink: true, //面包屑导航，显示为普通文本
+    },
+    redirect: {
+      path: '/page1',
     },
     children: [
       {
-        path: '/nestMenu/page1',
+        path: '/page1',
         name: 'Page1',
         component: () => import('@/views/nestMenu/page1/index.vue'),
         meta: {
@@ -30,6 +32,9 @@ export default [
           auth: ['admin', 'normal'],
           // noHidden: false,
           noBreadcrumbLink: true,
+        },
+        redirect: {
+          path: '/page2-1',
         },
         children: [
           {
@@ -63,6 +68,9 @@ export default [
           auth: ['admin', 'normal'],
           // noHidden: false,
         },
+        redirect: {
+          path: '/page3-1',
+        },
         children: [
           {
             path: '/page3-1',
@@ -83,6 +91,9 @@ export default [
               title: 'page3_2',
               auth: ['admin', 'normal'],
               // noHidden: false,
+            },
+            redirect: {
+              path: '/page3-2-1',
             },
             children: [
               {

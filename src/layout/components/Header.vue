@@ -1,23 +1,22 @@
 <template>
   <a-layout-header class="header">
-    <slot name="headerLeft"></slot>
+    <div class="header-left">
+      <slot name="headerLeft"> </slot>
+      <BreadCrumb />
+    </div>
     <div class="header-right">
       <a href="https://github.com/BaiFangZi/vue3-antd-manage">
         <GithubOutlined class="header-right-item"
       /></a>
 
       <a-dropdown>
-        <span style="width: 60px" class="header-right-item">{{
-          $t('system.language')
-        }}</span>
+        <span style="width: 60px" class="header-right-item">
+          {{ $t('system.language') }}
+        </span>
         <template #overlay>
           <a-menu @click="handleChangeLanguage">
-            <a-menu-item :disabled="curLocale == 'zh_CN'" key="zh_CN">
-              中文简体
-            </a-menu-item>
-            <a-menu-item :disabled="curLocale == 'en'" key="en">
-              English</a-menu-item
-            >
+            <a-menu-item :disabled="curLocale == 'zh_CN'" key="zh_CN"> 中文简体 </a-menu-item>
+            <a-menu-item :disabled="curLocale == 'en'" key="en"> English</a-menu-item>
           </a-menu>
         </template>
       </a-dropdown>
@@ -26,9 +25,7 @@
         <template #overlay>
           <a-menu>
             <a-menu-item>
-              <router-link to="/setting">{{
-                $t('system.setting')
-              }}</router-link>
+              <router-link to="/setting">{{ $t('system.setting') }}</router-link>
             </a-menu-item>
             <a-menu-item> {{ $t('system.loginOut') }}</a-menu-item>
           </a-menu>
@@ -39,6 +36,7 @@
 </template>
 
 <script setup>
+import BreadCrumb from './BreadCrumb.vue'
 import { ref, computed } from 'vue'
 // import { UserOutlined, GithubOutlined } from '@ant-design/icons-vue'
 import { useLocal } from '@/hooks/useLocale'
@@ -62,6 +60,9 @@ const handleChangeLanguage = async ({ key }) => {
   padding: 0;
   display: flex;
   justify-content: space-between;
+  .header-left {
+    display: flex;
+  }
   .header-right {
     margin: 0 20px;
     display: flex;

@@ -8,6 +8,9 @@ export default [
       auth: ['admin', 'user'],
       icon:'ProjectOutlined'
     },
+    redirect:{
+      path:'complexTable'
+    },
     children: [
       {
         path: '/complexTable',

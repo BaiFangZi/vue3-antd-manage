@@ -105,9 +105,9 @@ export default defineComponent({
     };
   },
 
-  components: {
-    SmileOutlined,
-    DownOutlined,
-  },
+  // components: {
+  //   SmileOutlined,
+  //   DownOutlined,
+  // },
 });
 </script>
