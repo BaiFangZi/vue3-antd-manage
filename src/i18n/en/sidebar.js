@@ -20,6 +20,8 @@ const component = {
   basicModal: 'BasicModal',
   drawer: 'Drawer',
   basicDrawer: 'BasicDrawer',
+  list: 'List',
+  basicList: 'BasicList',
   tree: 'Tree',
   basicTree: 'BasicTree',
   upload: 'Upload',

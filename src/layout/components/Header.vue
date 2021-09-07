@@ -40,7 +40,7 @@
 
 <script setup>
 import { ref, computed } from 'vue'
-import { UserOutlined, GithubOutlined } from '@ant-design/icons-vue'
+// import { UserOutlined, GithubOutlined } from '@ant-design/icons-vue'
 import { useLocal } from '@/hooks/useLocale'
 // import { useI18n } from 'vue-i18n'
 import { useStore } from 'vuex'

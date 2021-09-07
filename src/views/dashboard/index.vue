@@ -10,7 +10,7 @@
 </template>
 
 <script setup>
-import { EyeOutlined, StarOutlined } from '@ant-design/icons-vue'
+// import { EyeOutlined, StarOutlined } from '@ant-design/icons-vue'
 import HeaderCard from './HeaderCard.vue'
 import { useEcharts } from '@/hooks/useEcharts'
 

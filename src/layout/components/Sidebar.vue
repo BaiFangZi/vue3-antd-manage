@@ -1,17 +1,15 @@
 <template>
   <a-layout-sider v-model:collapsed="collapsed" :trigger="null" collapsible>
     <div class="logo"></div>
-    <a-menu
-      theme="dark"
-      mode="inline"
-      v-model:selectedKeys="selectedKeys"
-      @click="handleGoRouter"
-    >
+    <a-menu theme="dark" mode="inline" v-model:selectedKeys="selectedKeys" @click="handleGoRouter">
       <template v-for="item in menuList" :key="item.path">
         <template v-if="!item.children">
           <a-menu-item v-if="!item.meta.noHidden" :key="item.path">
-            {{ $t(`sidebar.${item.meta.title}`) }}</a-menu-item
-          >
+            <template #icon>
+              <component :is="item.meta.icon"></component>
+            </template>
+            {{ $t(`sidebar.${item.meta.title}`) }}
+          </a-menu-item>
         </template>
         <template v-else>
           <SubMenu :menu-list="item"></SubMenu>
@@ -33,6 +31,9 @@ const SubMenu = {
   template: `
   <a-sub-menu :key="menuList.path">
      <template #title>{{ $t('sidebar.'+menuList.meta.title) }}</template>
+      <template #icon>
+            <component :is="menuList.meta.icon"></component>
+      </template>
      <template v-for="item in menuList.children" :key="item.path">
         <template v-if="!item.children">
           <a-menu-item :key="item.path">

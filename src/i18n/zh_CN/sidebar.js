@@ -20,6 +20,8 @@ const component = {
   basicModal: '基础弹窗',
   drawer: '抽屉',
   basicDrawer: '基础抽屉',
+  list: '列表',
+  basicList: '基础列表',
   tree: '树列表',
   basicTree: '基础树列表',
   upload: '上传',

@@ -6,6 +6,7 @@ export default [
     meta: {
       title: 'component',
       auth: ['admin', 'user'],
+      icon:'PicCenterOutlined'
     },
     children: [
       {
@@ -108,6 +109,28 @@ export default [
               import('@/views/components-demo/upload/basicUpload.vue'),
             meta: {
               title: 'basicUpload',
+              auth: ['admin', 'user'],
+            },
+          },
+        ],
+      },
+      {
+        path: '/list',
+        name: 'List',
+        component: () => import('@/layout/defaultRouter.vue'),
+        meta: {
+          title: 'list',
+          auth: ['admin', 'user'],
+        },
+        children: [
+          {
+            path: '/basic-list',
+            name: 'BasicList',
+            component: () =>
+              // import('@/views/components-demo/list/basicList.vue'), // 出错 500
+              import('@/views/components-demo/list/basicList.vue'),  //正常使用
+            meta: {
+              title: 'basicList',
               auth: ['admin', 'user'],
             },
           },

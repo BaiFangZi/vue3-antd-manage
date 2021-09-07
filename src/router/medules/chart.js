@@ -6,6 +6,7 @@ export default [
     meta: {
       title: 'chart',
       auth: ['admin', 'user'],
+      icon: 'BarChartOutlined',
     },
     children: [
       {

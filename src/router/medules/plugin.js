@@ -6,6 +6,7 @@ export default [
     meta: {
       title: 'plugin',
       auth: ['admin', 'user'],
+      icon:'BulbOutlined'
     },
     children: [
       {

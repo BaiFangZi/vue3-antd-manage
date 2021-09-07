@@ -6,6 +6,7 @@ export default [
     meta: {
       title: 'realProject',
       auth: ['admin', 'user'],
+      icon:'ProjectOutlined'
     },
     children: [
       {

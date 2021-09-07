@@ -12,6 +12,7 @@ export const asyncRoutes = [
     meta: {
       title: 'dashboard', // 名称
       auth: ['admin', 'user'], // 权限
+      icon: 'DashboardOutlined',
       // noHidden: true,  // 是否隐藏
     },
   },
@@ -22,6 +23,7 @@ export const asyncRoutes = [
     meta: {
       title: 'setting',
       auth: ['admin', 'user'],
+      icon: 'SettingOutlined',
       noHidden: true,
     },
   },

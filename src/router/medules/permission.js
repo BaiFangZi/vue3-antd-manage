@@ -6,6 +6,7 @@ export default [
     meta: {
       title: 'permission',
       auth: ['admin', 'user'],
+      icon:'KeyOutlined'
     },
     children: [
       {
