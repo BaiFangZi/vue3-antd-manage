@@ -8,7 +8,7 @@
 
       <a-dropdown>
         <span style="width: 60px" class="header-right-item">{{
-          $t('common.language')
+          $t('system.language')
         }}</span>
         <template #overlay>
           <a-menu @click="handleChangeLanguage">
@@ -26,9 +26,11 @@
         <template #overlay>
           <a-menu>
             <a-menu-item>
-              <router-link to="/setting">系统设置</router-link>
+              <router-link to="/setting">{{
+                $t('system.setting')
+              }}</router-link>
             </a-menu-item>
-            <a-menu-item> 退出登陆</a-menu-item>
+            <a-menu-item> {{ $t('system.loginOut') }}</a-menu-item>
           </a-menu>
         </template>
       </a-dropdown>

@@ -1,6 +1,4 @@
-export default {
-  dashboard: '首页',
-  setting: '系统设置',
+const nestMenu = {
   nestMenu: '多级菜单',
   page1: '页面1',
   page2: '页面2',
@@ -10,6 +8,9 @@ export default {
   page3_1: '页面3-1',
   page3_2: '页面3_2',
   page3_2_1: '页面3-2-1',
+}
+
+const component = {
   component: '常用组件',
   table: '表格',
   basicTable: '基础表格',
@@ -23,18 +24,39 @@ export default {
   basicTree: '基础树列表',
   upload: '上传',
   basicUpload: '基础上传',
-  plugin:'第三方插件',
-  excel:'Excel',
-  zip:'Zip',
-  chart:'图表',
-  aMap:'高德地图',
-  bMap:'百度地图',
-  echarts:'Echarts图表',
-  lineChart:'折线图',
-  permission:'权限管理',
-  btnPermission:'按钮权限',
-  pagePermission:'页面权限',
-  realProject:'实际开发',
-  complexTable:'复杂表格',
-  about:'关于',
+}
+
+const plugin = {
+  plugin: '第三方插件',
+  excel: 'Excel',
+  zip: 'Zip',
+  print: '打印',
+}
+const chart = {
+  chart: '图表',
+  aMap: '高德地图',
+  bMap: '百度地图',
+  echarts: 'Echarts图表',
+  lineChart: '折线图',
+}
+
+const permission = {
+  permission: '权限管理',
+  btnPermission: '按钮权限',
+  pagePermission: '页面权限',
+}
+
+const realProject = {
+  realProject: '实际开发',
+  complexTable: '复杂表格',
+}
+export default {
+  dashboard: '首页',
+  ...nestMenu,
+  ...component,
+  ...plugin,
+  ...chart,
+  ...permission,
+  ...realProject,
+  about: '关于',
 }

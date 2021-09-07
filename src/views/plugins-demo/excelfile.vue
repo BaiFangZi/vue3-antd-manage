@@ -46,7 +46,7 @@ for (let i = 0; i < 100; i++) {
 <script setup>
 import { ref, unref } from 'vue'
 // import { message } from 'ant-design-vue'
-import { arrayToExcel } from '@/plugins/Export2Excel'
+// import { arrayToExcel } from '@/plugins/Export2Excel'
 const tableData = ref(data)
 const exportExcelName = ref('')
 const handleExportExcel = () => {
@@ -62,10 +62,8 @@ const handleExportExcel = () => {
     item.age,
     item.address,
   ])
-  arrayToExcel({
-    header,
-    data,
-    fileName,
+  import('@/plugins/Export2Excel').then(({ arrayToExcel }) => {
+    arrayToExcel({ header, data, fileName })
   })
 }
 </script>

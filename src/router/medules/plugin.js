@@ -26,6 +26,15 @@ export default [
           auth: ['admin', 'user'],
         },
       },
+      {
+        path: '/print',
+        name: 'Print',
+        component: () => import('@/views/plugins-demo/print.vue'),
+        meta: {
+          title: 'print',
+          auth: ['admin', 'user'],
+        },
+      },
     ],
   },
 ]

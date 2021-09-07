@@ -1,5 +1,5 @@
 export default {
-  language: 'English',
-  exportExcel:'Export Excel'
 
+  exportExcel: 'Export Excel',
+  exportZip: 'Export Zip',
 }
