@@ -33,6 +33,7 @@ const plugin = {
   excel: 'Excel',
   zip: 'Zip',
   print: '打印',
+  pdf:'PDF'
 }
 const chart = {
   chart: '图表',

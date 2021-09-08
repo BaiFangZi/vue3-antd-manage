@@ -15,7 +15,7 @@ export default [
       {
         path: '/excel',
         name: 'Excel',
-        component: () => import('@/views/plugins-demo/excelfile.vue'),
+        component: () => import('@/views/plugins-demo/excel.vue'),
         meta: {
           title: 'excel',
           auth: ['admin', 'user'],
@@ -24,9 +24,18 @@ export default [
       {
         path: '/zip',
         name: 'Zip',
-        component: () => import('@/views/plugins-demo/zipfile.vue'),
+        component: () => import('@/views/plugins-demo/zip$.vue'),
         meta: {
           title: 'zip',
+          auth: ['admin', 'user'],
+        },
+      },
+      {
+        path: '/pdf',
+        name: 'PDF',
+        component: () => import('@/views/plugins-demo/pdf.vue'),
+        meta: {
+          title: 'pdf',
           auth: ['admin', 'user'],
         },
       },
