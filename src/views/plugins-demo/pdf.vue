@@ -1,12 +1,12 @@
 <template>
   <div>
     <a-alert
-      message="使用window.print()方法生成PDF,生成的是body中的全部内容"
+      :message="$t('tip.windowPrintAlert')"
       type="success"
     />
     <br />
     <a-alert
-      message="使用print-js生成pdf可以局部生成，自定义容器"
+      :message="$t('tip.printJSAlert')"
       type="success"
     ></a-alert>
     <br />
