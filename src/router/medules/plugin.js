@@ -6,10 +6,10 @@ export default [
     meta: {
       title: 'plugin',
       auth: ['admin', 'user'],
-      icon:'BulbOutlined'
+      icon: 'BulbOutlined',
     },
-    redirect:{
-      path:'/excel',
+    redirect: {
+      path: '/excel',
     },
     children: [
       {
@@ -45,6 +45,15 @@ export default [
         component: () => import('@/views/plugins-demo/print.vue'),
         meta: {
           title: 'print',
+          auth: ['admin', 'user'],
+        },
+      },
+      {
+        path: '/richEditor',
+        name: 'RichEditor',
+        component: () => import('@/views/plugins-demo/richEditor.vue'),
+        meta: {
+          title: 'richEditor',
           auth: ['admin', 'user'],
         },
       },

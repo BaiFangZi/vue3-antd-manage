@@ -34,6 +34,7 @@ const plugin = {
   zip: 'Zip',
   print: 'Print',
   pdf: 'PDF',
+  markdown: 'Markdown',
 }
 const chart = {
   chart: 'Chart',
