@@ -13,11 +13,11 @@
 </template>
 <script></script>
 <script setup>
-import { computed, ref, unref } from 'vue'
+import { ref, unref } from 'vue'
 import { useScript } from '@/hooks/useScript'
 import { useStore } from 'vuex'
 const { createScript } = useScript()
-const store = useStore()
+const store = useStore()   
 const aMapKey = ref(store.state.app.aMapKey)
 const aMapContent = ref(null)
 const handleCreateAMap = () => {
@@ -26,7 +26,7 @@ const handleCreateAMap = () => {
     src: `https://webapi.amap.com/maps?v=1.4.2&key=${unref(aMapKey)}`,
   }).then((res) => {
     var map = new AMap.Map(unref(aMapContent), {
-      center:[116.480983, 39.989628],
+      center: [116.480983, 39.989628],
       zoom: 11,
     })
   })
