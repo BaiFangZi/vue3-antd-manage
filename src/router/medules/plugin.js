@@ -57,6 +57,15 @@ export default [
           auth: ['admin', 'user'],
         },
       },
+      {
+        path: '/markdown',
+        name: 'MarkDown',
+        component: () => import('@/views/plugins-demo/markdown.vue'),
+        meta: {
+          title: 'markdown',
+          auth: ['admin', 'user'],
+        },
+      },
     ],
   },
 ]

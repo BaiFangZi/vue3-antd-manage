@@ -34,7 +34,8 @@ const plugin = {
   zip: 'Zip',
   print: '打印',
   pdf:'PDF',
-  richEditor:'RichEditor'
+  richEditor:'富文本编辑器',
+  markdown:'MarkDown'
 }
 const chart = {
   chart: '图表',
