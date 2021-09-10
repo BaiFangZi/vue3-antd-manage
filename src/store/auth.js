@@ -13,17 +13,16 @@ const getters = {
   },
 }
 const mutations = {
-  // SET_AUTH(state, auth) {
-  //   state.auth = auth
-  //   // localStorage.setItem('access-token', auth)
-  // },
   GENERATE_ROUTES(state, auth) {
     const layout = constantRoutes.find((item) => item.path === '/')
     const authRoutes = traversalRoutes(asyncRoutes, auth)
     layout.children = [...authRoutes]
     state.menuList = authRoutes
+    // console.log(authRoutes)
     state.auth = auth
-    router.addRoute(layout)
+    console.log(constantRoutes)
+    // router.addRoute(constantRoutes)
+    constantRoutes.forEach((r) => router.addRoute(r))
   },
 }
 const actions = {}
@@ -41,10 +40,8 @@ function traversalRoutes(routes, auth) {
   routes.forEach((r) => {
     let { meta, children } = r
     if (meta.auth.includes(auth)) {
-      //找到用户身份对应的路由
       if (children && children.length) {
-        //有子路由的话去递归
-        children = traversalRoutes(children, auth)
+        r.children = traversalRoutes(children, auth)
       }
       result.push(r)
     }

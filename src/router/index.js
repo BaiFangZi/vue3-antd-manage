@@ -7,6 +7,18 @@ const routes = [
     name: 'Login',
     component: () => import('@/views/login/index.vue'),
   },
+  // {
+  //   path: '/404NotFound',
+  //   name: 'NotFound',
+  //   component: () => import('@/views/error/404NotFound.vue'),
+  // },
+
+  // {
+  //   path: '/:pathMatch(.*)*',
+  //   name: 'NotFound',
+  //   component: () => import('@/views/error/404NotFound.vue'),
+  //   redirect: '/404NotFound',
+  // },
 ]
 
 const router = createRouter({

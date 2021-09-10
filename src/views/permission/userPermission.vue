@@ -1,0 +1,5 @@
+<template>
+  <div>
+     用户以普通用户身份登陆时,显示该页面的内容
+  </div>
+</template>

@@ -50,6 +50,10 @@ router.afterEach((to, from) => {
 })
 const app = createApp(App)
 
+
+import Has from '@/directive/has'
+app.directive('has',Has)
+
 import * as AntdIcon from '@ant-design/icons-vue'
 
 for (let c in AntdIcon) {

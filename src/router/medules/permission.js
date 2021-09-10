@@ -6,10 +6,10 @@ export default [
     meta: {
       title: 'permission',
       auth: ['admin', 'user'],
-      icon:'KeyOutlined'
+      icon: 'KeyOutlined',
     },
-    redirect:{
-      path:'/btnPermission',
+    redirect: {
+      path: '/btnPermission',
     },
     children: [
       {
@@ -21,14 +21,22 @@ export default [
           auth: ['admin', 'user'],
         },
       },
-
       {
-        path: '/pagePermission',
-        name: 'PagePermission',
-        component: () => import('@/views/permission/pagePermission.vue'),
+        path: '/adminPermission',
+        name: 'AdminPermission',
+        component: () => import('@/views/permission/adminPermission.vue'),
         meta: {
-          title: 'pagePermission',
+          title: 'adminPermission',
           auth: ['admin', 'user'],
+        },
+      },
+      {
+        path: '/userPermission',
+        name: 'UserPermission',
+        component: () => import('@/views/permission/userPermission.vue'),
+        meta: {
+          title: 'userPermission',
+          auth: ['user'],
         },
       },
     ],

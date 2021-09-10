@@ -33,22 +33,23 @@ const plugin = {
   excel: 'Excel',
   zip: 'Zip',
   print: '打印',
-  pdf:'PDF',
-  richEditor:'富文本编辑器',
-  markdown:'MarkDown'
+  pdf: 'PDF',
+  richEditor: '富文本编辑器',
+  markdown: 'MarkDown',
 }
 const chart = {
   chart: '图表',
   aMap: '高德地图',
   bMap: '百度地图',
   echarts: 'Echarts图表',
-  lineChart: '折线图',
+  basicChart: '基础折线',
 }
 
 const permission = {
   permission: '权限管理',
   btnPermission: '按钮权限',
-  pagePermission: '页面权限',
+  adminPermission: '管理员页面',
+  userPermission:'用户页面'
 }
 
 const realProject = {

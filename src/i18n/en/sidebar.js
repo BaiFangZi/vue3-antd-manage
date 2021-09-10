@@ -42,7 +42,7 @@ const chart = {
   aMap: 'AMap',
   bMap: 'BMap',
   echarts: 'Echarts',
-  lineChart: 'LineChart',
+  basicChart: 'BasicChart',
 }
 const permission = {
   permission: 'Permission',

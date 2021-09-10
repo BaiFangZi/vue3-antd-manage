@@ -45,6 +45,8 @@ export default defineConfig(({ mode }) => {
         },
       },
     },
+    clearScreen: false, // vite清屏不清除控制台打印的信息
+    // logLevel:'error',
     resolve: {
       alias: {
         vue: 'vue/dist/vue.esm-bundler.js',
