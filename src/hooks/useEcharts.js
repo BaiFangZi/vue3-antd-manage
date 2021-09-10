@@ -4,7 +4,6 @@ import { nextTick, onMounted,onUnmounted } from 'vue'
 export const useEcharts = (selector) => {
   let chartInstance = null
   onMounted(() => {
-    // console.log(selector)
     let el = document.querySelector(selector)
     chartInstance = echarts.init(el)
   })

@@ -33,16 +33,16 @@ const plugin = {
   excel: 'Excel',
   zip: 'Zip',
   print: '打印',
-  pdf:'PDF',
-  richEditor:'富文本编辑器',
-  markdown:'MarkDown'
+  pdf: 'PDF',
+  richEditor: '富文本编辑器',
+  markdown: 'MarkDown',
 }
 const chart = {
   chart: '图表',
   aMap: '高德地图',
   bMap: '百度地图',
   echarts: 'Echarts图表',
-  lineChart: '折线图',
+  basicChart: '基础折线',
 }
 
 const permission = {

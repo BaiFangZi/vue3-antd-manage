@@ -8,8 +8,8 @@ export default [
       auth: ['admin', 'user'],
       icon: 'BarChartOutlined',
     },
-    redirect:{
-      path:'/aMap',
+    redirect: {
+      path: '/aMap',
     },
     children: [
       {
@@ -39,16 +39,16 @@ export default [
           title: 'echarts',
           auth: ['admin', 'user'],
         },
-        redirect:{
-          path:'/lineChart',
+        redirect: {
+          path: '/basicChart',
         },
         children: [
           {
-            path: '/lineChart',
-            name: 'LineChart',
-            component: () => import('@/views/charts/echarts/lineChart.vue'),
+            path: '/basicChart',
+            name: 'BasicChart',
+            component: () => import('@/views/charts/echarts/basicChart.vue'),
             meta: {
-              title: 'lineChart',
+              title: 'basicChart',
               auth: ['admin', 'user'],
             },
           },

@@ -2,7 +2,7 @@
   <div id="vditor"></div>
 </template>
 <script setup>
-import { defineProps, ref, onMounted } from 'vue'
+import {  ref, onMounted } from 'vue'
 import Vditor from 'vditor'
 import 'vditor/dist/index.css'
 const contentEditor = ref('')
