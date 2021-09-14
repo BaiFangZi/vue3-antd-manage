@@ -43,6 +43,7 @@ const chart = {
   bMap: 'BMap',
   echarts: 'Echarts',
   basicChart: 'BasicChart',
+  mapChart:'Echarts Map'
 }
 const permission = {
   permission: 'Permission',

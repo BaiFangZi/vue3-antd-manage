@@ -14,12 +14,12 @@ export const useEcharts = (selector) => {
       chartInstance.setOption(option)
     })
   }
-  setTimeout(() => {
-    window.addEventListener('resize', useDebounce(chartInstance.resize))
-  })
-  onUnmounted(() => {
-    window.removeEventListener('resize',useDebounce(chartInstance.resize))
-  })
+  // setTimeout(() => {
+  //   window.addEventListener('resize', useDebounce(chartInstance.resize))
+  // })
+  // onUnmounted(() => {
+  //   window.removeEventListener('resize',useDebounce(chartInstance.resize))
+  // })
   return {
     setOption,
   }

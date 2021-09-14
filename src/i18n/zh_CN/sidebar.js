@@ -43,6 +43,7 @@ const chart = {
   bMap: '百度地图',
   echarts: 'Echarts图表',
   basicChart: '基础折线',
+  mapChart:'Echarts地图'
 }
 
 const permission = {

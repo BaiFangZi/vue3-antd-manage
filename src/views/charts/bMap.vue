@@ -34,6 +34,18 @@ const handleCreateBMap = () => {
     map.enableScrollWheelZoom(true)
   })
 }
+
+// onMounted(()=>{
+//     createScript({
+//     src: `https://api.map.baidu.com/getscript?v=3.0&ak=${bMapKey}&services=&t=20210201100830`,
+//   }).then((res) => {
+//     const BMap = window.BMap
+//     const map = new BMap.Map(unref(bMapContent))
+//     const point = new BMap.Point(117.404, 39.915)
+//     map.centerAndZoom(point, 15)
+//     map.enableScrollWheelZoom(true)
+//   })
+// })
 </script>
 
 <style lang="scss">

@@ -52,6 +52,15 @@ export default [
               auth: ['admin', 'user'],
             },
           },
+          {
+            path: '/mapChart',
+            name: 'MapChart',
+            component: () => import('@/views/charts/echarts/mapChart.vue'),
+            meta: {
+              title: 'mapChart',
+              auth: ['admin', 'user'],
+            },
+          },
         ],
       },
     ],

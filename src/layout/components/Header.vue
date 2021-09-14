@@ -37,7 +37,7 @@
                 $t('system.setting')
               }}</router-link>
             </a-menu-item>
-            <a-menu-item> {{ $t('system.loginOut') }}</a-menu-item>
+            <a-menu-item @click="handleLoginOut"> {{ $t('system.loginOut') }}</a-menu-item>
           </a-menu>
         </template>
       </a-dropdown>
@@ -63,6 +63,10 @@ const handleChangeLanguage = async ({ key }) => {
 }
 const handleClickGit = () => {
   location.href="https://github.com/BaiFangZi/vue3-antd-manage"
+}
+const handleLoginOut=()=>{
+  // console.log(23)
+  
 }
 </script>
 

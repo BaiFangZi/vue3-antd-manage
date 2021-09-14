@@ -8,10 +8,13 @@ import {
   TooltipComponent,
   GridComponent,
   LegendComponent,
+  VisualMapComponent,
 } from 'echarts/components'
 // 引入 Canvas 渲染器，注意引入 CanvasRenderer 或者 SVGRenderer 是必须的一步
 // import { SVGRenderer } from 'echarts/renderers'
 import { CanvasRenderer } from 'echarts/renderers'
+
+import { MapChart, EffectScatterChart } from 'echarts/charts'
 // 注册必须的组件
 echarts.use([
   TitleComponent,
