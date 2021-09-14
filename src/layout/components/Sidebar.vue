@@ -1,7 +1,20 @@
 <template>
-  <a-layout-sider v-model:collapsed="collapsed" :trigger="null" collapsible>
+  <!-- <div>
+   
+  </div> -->
+  <a-layout-sider
+    v-model:collapsed="collapsed"
+    :trigger="null"
+    collapsible
+    class="scrollbar"
+  >
     <div class="logo"></div>
-    <a-menu theme="dark" mode="inline" v-model:selectedKeys="selectedKeys" @click="handleGoRouter">
+    <a-menu
+      theme="dark"
+      mode="inline"
+      v-model:selectedKeys="selectedKeys"
+      @click="handleGoRouter"
+    >
       <template v-for="item in menuList" :key="item.path">
         <template v-if="!item.children">
           <a-menu-item v-if="!item.meta.noHidden" :key="item.path">
@@ -79,6 +92,7 @@ const handleGoRouter = ({ key }) => {
 </script>
 
 <style lang="scss">
+
 .logo {
   // display: inline-block;
   height: 32px;

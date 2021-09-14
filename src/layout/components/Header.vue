@@ -81,8 +81,11 @@ const handleClickGit = () => {
     justify-content: space-between;
     align-items: center;
     .header-right-item {
-      margin: 0 10px;
+      margin: 0 6px;
       cursor: pointer;
+      &:hover{
+        color:  #1890ff;
+      }
     }
     .anticon {
       font-size: 20px;
@@ -101,3 +104,4 @@ const handleClickGit = () => {
   color: #1890ff;
 }
 </style>
+

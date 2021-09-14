@@ -1,7 +1,7 @@
 <template>
   <a-layout>
     <Sidebar :collapsed="collapsed"></Sidebar>
-    <a-layout>
+    <a-layout class="scrollbar">
       <Header>
         <template v-slot:headerLeft>
           <MenuUnfoldOutlined
