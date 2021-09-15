@@ -48,13 +48,13 @@
 <script setup>
 import BreadCrumb from './BreadCrumb.vue'
 // import { ref, computed } from 'vue'
-import { useLocal } from '@/hooks/useLocale'
+import { useLocale } from '@/hooks/useLocale'
 import { useStore } from 'vuex'
 
 import { useFullScreen } from '@/hooks/useFullScreen'
 
 const store = useStore()
-const { changeLang, curLocale } = useLocal()
+const { changeLang, curLocale } = useLocale()
 const { isFull, requestFullScreen, exitFullScreen } = useFullScreen()
 const handleChangeLanguage = async ({ key }) => {
   await changeLang(key)

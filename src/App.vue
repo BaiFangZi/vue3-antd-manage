@@ -1,8 +1,15 @@
 <template>
-  <router-view></router-view>
+  <a-config-provider :locale="locale">
+    <router-view></router-view>
+  </a-config-provider>
 </template>
 
-<script setup></script>
+<script setup>
+import { useLocale } from '@/hooks/useLocale.js'
+const { getAntdLocale } = useLocale()
+const locale = getAntdLocale()
+console.log(locale)
+</script>
 
 <style lang="scss">
 #app {
