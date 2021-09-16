@@ -1,9 +1,11 @@
 import axios from 'axios'
 
-// console.log(import.meta)
+const CancelToken = axios.CancelToken
+export let axiosCancel
 
 const request = axios.create({
   baseURL: import.meta.env.VITE_BASE_URL,
+  cancelToken: new CancelToken((cancel) => (axiosCancel = cancel)),
 })
 
 request.interceptors.request.use(

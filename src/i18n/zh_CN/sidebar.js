@@ -43,19 +43,22 @@ const chart = {
   bMap: '百度地图',
   echarts: 'Echarts图表',
   basicChart: '基础折线',
-  mapChart:'Echarts地图'
+  mapChart: 'Echarts地图',
 }
 
 const permission = {
   permission: '权限管理',
   btnPermission: '按钮权限',
   adminPermission: '管理员页面',
-  userPermission:'用户页面'
+  userPermission: '用户页面',
 }
 
 const realProject = {
   realProject: '实际开发',
   complexTable: '复杂表格',
+  axiosCancel: '取消axios请求',
+  download: '文件下载',
+  websocket:'WebSocket'
 }
 export default {
   dashboard: '首页',

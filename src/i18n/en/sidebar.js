@@ -43,7 +43,7 @@ const chart = {
   bMap: 'BMap',
   echarts: 'Echarts',
   basicChart: 'BasicChart',
-  mapChart:'Echarts Map'
+  mapChart: 'Echarts Map',
 }
 const permission = {
   permission: 'Permission',
@@ -53,6 +53,9 @@ const permission = {
 const realProject = {
   realProject: 'RealProject',
   complexTable: 'ComplexTable',
+  axiosCancel: 'AxiosCancel',
+  download: 'Download',
+  websocket: 'WebSocket',
 }
 export default {
   dashboard: 'Dashboard',
