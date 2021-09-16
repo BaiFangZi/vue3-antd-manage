@@ -50,9 +50,11 @@ router.afterEach((to, from) => {
 })
 const app = createApp(App)
 
-
 import Has from '@/directive/has'
-app.directive('has',Has)
+app.directive('has', Has)
+
+import TableHeader from '@/components/TableHeader/index.vue'
+app.component('TableHeader', TableHeader)
 
 import * as AntdIcon from '@ant-design/icons-vue'
 

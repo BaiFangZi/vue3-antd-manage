@@ -1,6 +1,8 @@
 <template>
-  <div>
-    <AddModal @add="handleAdd" />
+  <div class="">
+    <TableHeader @search="onSearch">
+      <AddModal @add="onAddTableItem" />
+    </TableHeader>
     <a-table
       :columns="columns"
       :row-key="(record) => record.id"
@@ -63,7 +65,8 @@
       v-if="visible"
       :visible="visible"
       :updateData="updateData"
-      @update="onUpdateData"
+      @update="onUpdateTableItem"
+      @cancel="visible = false"
     />
   </div>
 </template>
@@ -158,7 +161,7 @@ const onSelectChange = (keys) => {
 const handleTableChange = ({ current, pageSize }) => {
   handleQueryTableData(current, pageSize)
 }
-const handleAdd = () => {
+const onAddTableItem = () => {
   const { current, pageSize } = unref(pagination)
   handleQueryTableData(current, pageSize)
 }
@@ -170,13 +173,16 @@ const handleUpdate = (record) => {
   visible.value = true
   updateData.value = record
 }
-const onUpdateData = () => {
+const onUpdateTableItem = () => {
   // console.log(2)
   visible.value = false
   const { current, pageSize } = unref(pagination)
   handleQueryTableData(current, pageSize)
 }
 
+const onSearch = (val) => {
+  console.log('搜索得内容是',val)
+}
 const handleDelete = (id) => {
   console.log(id)
 }

@@ -1,6 +1,11 @@
 <template>
   <div class="add-modal">
-    <a-modal v-model:visible="visible" title="更新项目" @ok="handleSubmit">
+    <a-modal
+      v-model:visible="visible"
+      title="更新项目"
+      @ok="handleSubmit"
+      @cancel="emits('cancel')"
+    >
       <a-form :label-col="{ span: 6 }">
         <a-form-item label="Name" v-bind="validateInfos.name">
           <a-input v-model:value="modelRef.name" />
@@ -60,9 +65,9 @@ const props = defineProps({
 //   upgraded: undefined,
 //   status: [],
 // })
-const modelRef =props.updateData
-console.log(isReactive(modelRef))
-console.log(props,props.updateData,modelRef)
+const modelRef = props.updateData
+// console.log(isReactive(modelRef))
+// console.log(props,props.updateData,modelRef)
 const rulesRef = reactive({
   name: [
     {
@@ -96,7 +101,6 @@ const emits = defineEmits(['update'])
 const handleSubmit = () => {
   validate()
     .then(() => {
-    
       console.log(toRaw(modelRef))
       // visible.value = false
       resetFields()
@@ -111,8 +115,4 @@ const showModal = () => {
   visible.value = true
 }
 </script>
-<style lang="scss">
-.add-modal {
-  margin-bottom: 20px;
-}
-</style>
+<style lang="scss"></style>

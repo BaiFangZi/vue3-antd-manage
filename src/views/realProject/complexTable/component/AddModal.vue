@@ -90,7 +90,5 @@ const showModal = () => {
 }
 </script>
 <style lang="scss">
-.add-modal {
-  margin-bottom: 20px;
-}
+
 </style>
