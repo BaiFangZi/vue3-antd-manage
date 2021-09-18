@@ -55,7 +55,8 @@ app.directive('has', Has)
 
 import TableHeader from '@/components/TableHeader/index.vue'
 app.component('TableHeader', TableHeader)
-
+import LangMenu from '@/components/LangMenu/index.vue'
+app.component('LangMenu', LangMenu)
 import * as AntdIcon from '@ant-design/icons-vue'
 
 for (let c in AntdIcon) {

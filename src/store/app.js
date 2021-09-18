@@ -1,6 +1,6 @@
 const state = {
   lang: localStorage.getItem('language') || 'zh_CN',
-  auth: localStorage.getItem('access-token') || '',
+  // auth: localStorage.getItem('access-token') || '',
   aMapKey: localStorage.getItem('amap-key') || '',
   bMapKey: localStorage.getItem('bmap-key') || '',
 }
@@ -20,8 +20,17 @@ const mutations = {
     state.bMapKey = bMapKey
     localStorage.setItem('bmap-key', bMapKey)
   },
-  SET_STATE(state, { key, value }) {
-    state[key] = value
+  CLEAR_LANG(state) {
+    state.lang = ''
+    localStorage.getItem('language') && localStorage.removeItem('language')
+  },
+  CLEAR_AMAP_KEY(state) {
+    state.lang = ''
+    localStorage.getItem('amap-key') && localStorage.removeItem('amap-key')
+  },
+  CLEAR_BMAP_KEY(state) {
+    state.lang = ''
+    localStorage.getItem('amap-key') && localStorage.removeItem('amap-key')
   },
 }
 const actions = {}

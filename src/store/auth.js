@@ -8,7 +8,7 @@ const state = {
 }
 const getters = {
   token: () => {
-    localStorage.setItem('access-token', state.auth)
+    // localStorage.setItem('access-token', state.auth)
     return state.auth
   },
 }
@@ -23,6 +23,15 @@ const mutations = {
     console.log(constantRoutes)
     // router.addRoute(constantRoutes)
     constantRoutes.forEach((r) => router.addRoute(r))
+  },
+  SET_AUTH(state, auth) {
+    state.auth = auth
+    localStorage.setItem('access-token', auth)
+  },
+  CLEAR_AUTH(state) {
+    console.log(122121212)
+    localStorage.removeItem('access-token')
+    state.auth = ''
   },
 }
 const actions = {}
