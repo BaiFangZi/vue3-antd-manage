@@ -149,7 +149,6 @@ export function tableToExcel({
     bookSST: false,
     type: 'binary',
   })
-  console.log(fileName)
   saveAs(
     new Blob([s2ab(wbout)], {
       type: 'application/octet-stream',

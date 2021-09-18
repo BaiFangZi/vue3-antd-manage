@@ -4,7 +4,7 @@
   // padding: 20px;
 }
 
-.flex {
+.flex-center {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -32,8 +32,6 @@
 .table-title {
   display: flex;
   margin-bottom: 16px;
-  // justify-content: space-between;
-  // align-items: center;
   .table-title-item {
     display: flex;
     justify-content: space-between;

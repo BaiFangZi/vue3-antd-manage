@@ -1,5 +1,5 @@
 <template>
-  <div class="flex">
+  <div class="flex-center">
     <a-breadcrumb :routes="matchedRoute">
       <template #itemRender="{ route, routes }">
         <span v-if="routes.indexOf(route) === routes.length - 1">

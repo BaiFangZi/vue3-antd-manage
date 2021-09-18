@@ -2,7 +2,12 @@
   <a-row>
     <a-col :span="12">
       <a-card title="用户1">
-        <div class="flex">
+        <template #extra>
+          <a-avatar class="user" style="background: #87d068">
+            <template #icon><UserOutlined /></template>
+          </a-avatar>
+        </template>
+        <div class="flex-center">
           <a-input v-model:value="value1"></a-input>
           <a-button @click="handleUser1Send">发送</a-button>
         </div>
@@ -10,9 +15,15 @@
           <p
             v-for="log in user1.chatLog.value"
             :key="log"
-            :class="log.user === 'user1' ? 'right' : 'left'"
+            :class="log.user === 'user1' ? 'current-user' : 'other-user'"
           >
-            {{ log.value }}
+            <a-avatar
+              class="user"
+              :class="log.user === 'user1' ? 'green' : 'blue'"
+            >
+              <template #icon><UserOutlined /></template>
+            </a-avatar>
+            <span class="value"> {{ log.value }}</span>
             <a-divider></a-divider>
           </p>
         </div>
@@ -20,7 +31,12 @@
     </a-col>
     <a-col :span="12">
       <a-card title="用户2">
-        <div class="flex">
+        <template #extra>
+          <a-avatar class="user" style="background: #1890ff">
+            <template #icon><UserOutlined /></template>
+          </a-avatar>
+        </template>
+        <div class="flex-center">
           <a-input v-model:value="value2"></a-input>
           <a-button @click="handleUser2Send">发送</a-button>
         </div>
@@ -28,14 +44,19 @@
           <p
             v-for="log in user2.chatLog.value"
             :key="log"
-            :class="log.user === 'user2' ? 'right' : 'left'"
+            :class="log.user === 'user2' ? 'current-user' : 'other-user'"
           >
-            {{ log.value }}
+            <a-avatar
+              class="user"
+              :class="log.user === 'user1' ? 'green' : 'blue'"
+            >
+              <template #icon><UserOutlined /></template>
+            </a-avatar>
+            <span class="value"> {{ log.value }}</span>
             <a-divider></a-divider>
           </p>
-        </div>
-      </a-card></a-col
-    >
+        </div> </a-card
+    ></a-col>
   </a-row>
 </template>
 
@@ -59,7 +80,7 @@ const value2 = ref('')
 
 const user2 = useWebSocket('ws:localhost:9826', 'user2')
 const handleUser2Send = () => {
-    if (!value2.value.trim()) return
+  if (!value2.value.trim()) return
 
   user2.send({
     user: 'user2',
@@ -70,10 +91,26 @@ const handleUser2Send = () => {
 </script>
 
 <style lang="scss">
-.right {
-  text-align: right;
+.current-user {
+  .user,
+  .value {
+    float: right;
+    margin: 8px;
+  }
+
 }
-.left {
-  text-align: left;
+.other-user {
+  .user,
+  .value {
+    float: left;
+    margin: 8px;
+  }
+ 
+}
+.green {
+  background: #87d068;
+}
+.blue {
+  background-color: #1890ff;
 }
 </style>

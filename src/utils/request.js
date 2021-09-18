@@ -1,15 +1,19 @@
 import axios from 'axios'
-
-const CancelToken = axios.CancelToken
-export let axiosCancel
+import qs from 'qs'
+// import { useAxiosCancel } from '@/hooks/useAxiosCancel'
+// const CancelToken = axios.CancelToken
+// const source = CancelToken.source()
 
 const request = axios.create({
   baseURL: import.meta.env.VITE_BASE_URL,
-  cancelToken: new CancelToken((cancel) => (axiosCancel = cancel)),
+  // cancelToken: new CancelToken((cancel) => (axiosCancel = cancel)),
 })
 
 request.interceptors.request.use(
   (config) => {
+    removePendingRequest(config)
+    addPendingRequest(config)
+    // const { removePendingRequest, addPendingRequest } = useAxiosCancel(config)
     return config
   },
   (err) => {
@@ -18,11 +22,53 @@ request.interceptors.request.use(
 )
 request.interceptors.response.use(
   (response) => {
+    removePendingRequest(response.config)
     return response
   },
-  (err) => {
-    return Promise.reject(err)
+  (error) => {
+    removePendingRequest(error.config || {}) // 从pendingRequest对象中移除请求
+    if (axios.isCancel(error)) {
+      // 是取消请求的异常错误
+    } else {
+      // 其他异常错误
+    }
+    return Promise.reject(error)
   }
 )
 
+// request.post()
+// console.dir(request)
 export default request
+
+// 创建请求唯一标识
+function generateReqKey(config) {
+  const { method, url, params, data } = config
+  console.log([method, url, qs.stringify(params), qs.stringify(data)].join('&'))
+  return [method, url, qs.stringify(params), qs.stringify(data)].join('&')
+}
+const pendingRequest = new Map() // 存储请求唯一标识key
+
+// 根据请求标识创建对用的cancelToken函数
+function addPendingRequest(config) {
+  const requestKey = generateReqKey(config)
+  config.cancelToken =
+    config.cancelToken ||
+    new axios.CancelToken((cancel) => {
+      if (!pendingRequest.has(requestKey)) {
+        pendingRequest.set(requestKey, cancel)
+      }
+    })
+}
+// export let axiosCancel
+// 根据请求标识移除对应的cancelToken函数，取消请求
+export function removePendingRequest(config) {
+  
+  const requestKey = generateReqKey(config)
+  if (pendingRequest.has(requestKey)) {
+    const axiosCancel = pendingRequest.get(requestKey)
+    axiosCancel('取消请求')
+    pendingRequest.delete(requestKey)
+  }
+}
+
+// export

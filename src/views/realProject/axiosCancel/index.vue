@@ -17,18 +17,33 @@
 </template>
 <script setup>
 import { ref } from 'vue'
-import { axiosCancel } from '@/utils/request'
+import { removePendingRequest } from '@/utils/request'
+import { queryTable } from '@/api/data'
+import { message } from 'ant-design-vue'
 const progress = ref(0)
 const handleSendReq = () => {
-  setInterval(() => {
-    if (progress.value < 100) {
-      progress.value += 1
-    }
-  }, 200)
+   queryTable({ current: 1, pageSize: 1000 })
+    .then((res) => {
+      console.log(res)
+    })
+    .catch((err) => {
+      console.log(err)
+      message.warning(err.message)
+    })
+    console.log(a)
 }
 
 const handleCancelReq = () => {
-  axiosCancel()
-  console.log('取消')
+  // get&/queryTable&current=1&pageSize=1000&
+  removePendingRequest({
+    method: 'get',
+    url: '/queryTable',
+    params: {
+      current: 1,
+      pageSize: 1000,
+    },
+  })
+  // console.log(axiosCancel)
+  // axiosCancel('取消该请求')
 }
 </script>

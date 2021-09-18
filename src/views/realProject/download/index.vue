@@ -1,40 +1,45 @@
 <template>
   <div>
-    <div class="file-download-input">
-      <a-input v-model:value="fileUrl" placeholder="输入文件下载地址">
-        <!-- <template #addonAfter> <a-button></a-button></template> -->
-      </a-input>
-      <a-button type="primary" @click="handleDownloadFile">
-        <VerticalAlignBottomOutlined />
-      </a-button>
-    </div>
+    <a-alert
+      message="将图片转化成base64格式,然后在转成blob格式，然后利用a标签createObjectURL下载"
+    ></a-alert>
+
+    <a-button @click="handleDownloadLocalImg">下载本地文件</a-button>
+    <a-button @click="handleDownloadUrlImg" style="margin: 20px">
+      下载远程文件
+    </a-button>
+    <a-alert message="FileSaver插件下载"> </a-alert>
+    <a-button @click="handleSaveAsLocal">下载本地文件</a-button>
+    <a-button @click="handleSaveAsUrl" style="margin: 20px"
+      >下载远程文件</a-button
+    >
   </div>
 </template>
 
 <script setup>
-import { ref, unref } from 'vue'
-// import { download } from './download'
+import { download } from './download'
+import { saveAs } from 'file-saver'
+const handleDownloadLocalImg = () => {
+  download('/src/assets/img/avatar.jpg', '本地图片.png')
+}
 
-const fileUrl = ref('https://speed.hetzner.de/100MB.bin')
-import { message } from 'ant-design-vue'
-const handleDownloadFile = () => {
-  message.info('下载')
-  const url = unref(fileUrl)
-  // if (!url || !/http?/.test(url)) return
-  console.log('多线程下载开始: ' + +new Date())
-  download({
-    url,
-    chunkSize: 0.1 * 1024 * 1024,
-    poolLimit: 6,
-  }).then((buffers) => {
-    console.log('多线程下载结束: ' + +new Date())
-    saveAs({ buffers, name: '我的压缩包', mime: 'application/zip' })
+const handleDownloadUrlImg = () => {
+  download(
+    'https://img1.baidu.com/it/u=177553704,495132282&fm=26&fmt=auto',
+    '远程图片.png'
+  )
+}
+
+const handleSaveAsLocal = () => {
+  let blob = new Blob(['hellw world'], {
+    type: 'text/plain;charset=utf-8',
   })
+  saveAs(blob, 'hello.txt')
+}
+const handleSaveAsUrl = () => {
+  saveAs(
+    'https://img1.baidu.com/it/u=177553704,495132282&fm=26&fmt=auto',
+    'image.jpg'
+  )
 }
 </script>
-
-<style lang="scss">
-.file-download-input {
-  display: flex;
-}
-</style>
