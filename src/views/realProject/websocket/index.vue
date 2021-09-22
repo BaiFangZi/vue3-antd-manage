@@ -1,63 +1,66 @@
 <template>
-  <a-row>
-    <a-col :span="12">
-      <a-card title="用户1">
-        <template #extra>
-          <a-avatar class="user" style="background: #87d068">
-            <template #icon><UserOutlined /></template>
-          </a-avatar>
-        </template>
-        <div class="flex-center">
-          <a-input v-model:value="value1"></a-input>
-          <a-button @click="handleUser1Send">发送</a-button>
-        </div>
-        <div>
-          <p
-            v-for="log in user1.chatLog.value"
-            :key="log"
-            :class="log.user === 'user1' ? 'current-user' : 'other-user'"
-          >
-            <a-avatar
-              class="user"
-              :class="log.user === 'user1' ? 'green' : 'blue'"
-            >
+  <div>
+    <a-alert message="项目根目录下启动server.js"></a-alert>
+    <a-row>
+      <a-col :span="12">
+        <a-card title="用户1">
+          <template #extra>
+            <a-avatar class="user" style="background: #87d068">
               <template #icon><UserOutlined /></template>
             </a-avatar>
-            <span class="value"> {{ log.value }}</span>
-            <a-divider></a-divider>
-          </p>
-        </div>
-      </a-card>
-    </a-col>
-    <a-col :span="12">
-      <a-card title="用户2">
-        <template #extra>
-          <a-avatar class="user" style="background: #1890ff">
-            <template #icon><UserOutlined /></template>
-          </a-avatar>
-        </template>
-        <div class="flex-center">
-          <a-input v-model:value="value2"></a-input>
-          <a-button @click="handleUser2Send">发送</a-button>
-        </div>
-        <div>
-          <p
-            v-for="log in user2.chatLog.value"
-            :key="log"
-            :class="log.user === 'user2' ? 'current-user' : 'other-user'"
-          >
-            <a-avatar
-              class="user"
-              :class="log.user === 'user1' ? 'green' : 'blue'"
+          </template>
+          <div class="flex-center">
+            <a-input v-model:value="value1"></a-input>
+            <a-button @click="handleUser1Send">发送</a-button>
+          </div>
+          <div>
+            <p
+              v-for="log in user1.chatLog.value"
+              :key="log"
+              :class="log.user === 'user1' ? 'current-user' : 'other-user'"
             >
+              <a-avatar
+                class="user"
+                :class="log.user === 'user1' ? 'green' : 'blue'"
+              >
+                <template #icon><UserOutlined /></template>
+              </a-avatar>
+              <span class="value"> {{ log.value }}</span>
+              <a-divider></a-divider>
+            </p>
+          </div>
+        </a-card>
+      </a-col>
+      <a-col :span="12">
+        <a-card title="用户2">
+          <template #extra>
+            <a-avatar class="user" style="background: #1890ff">
               <template #icon><UserOutlined /></template>
             </a-avatar>
-            <span class="value"> {{ log.value }}</span>
-            <a-divider></a-divider>
-          </p>
-        </div> </a-card
-    ></a-col>
-  </a-row>
+          </template>
+          <div class="flex-center">
+            <a-input v-model:value="value2"></a-input>
+            <a-button @click="handleUser2Send">发送</a-button>
+          </div>
+          <div>
+            <p
+              v-for="log in user2.chatLog.value"
+              :key="log"
+              :class="log.user === 'user2' ? 'current-user' : 'other-user'"
+            >
+              <a-avatar
+                class="user"
+                :class="log.user === 'user1' ? 'green' : 'blue'"
+              >
+                <template #icon><UserOutlined /></template>
+              </a-avatar>
+              <span class="value"> {{ log.value }}</span>
+              <a-divider></a-divider>
+            </p>
+          </div> </a-card
+      ></a-col>
+    </a-row>
+  </div>
 </template>
 
 <script setup>
@@ -97,7 +100,6 @@ const handleUser2Send = () => {
     float: right;
     margin: 8px;
   }
-
 }
 .other-user {
   .user,
@@ -105,7 +107,6 @@ const handleUser2Send = () => {
     float: left;
     margin: 8px;
   }
- 
 }
 .green {
   background: #87d068;

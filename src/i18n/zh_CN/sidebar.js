@@ -58,7 +58,8 @@ const realProject = {
   complexTable: '复杂表格',
   axiosCancel: '取消axios请求',
   download: '文件下载',
-  websocket:'WebSocket'
+  websocket: 'WebSocket',
+  virtualList: '虚拟列表',
 }
 export default {
   dashboard: '首页',

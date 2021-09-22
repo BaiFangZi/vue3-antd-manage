@@ -48,6 +48,15 @@ export default [
           auth: ['admin', 'user'],
         },
       },
+      {
+        path: '/virtualList',
+        name: 'VirtualList',
+        component: () => import('@/views/realProject/virtualList/index.vue'),
+        meta: {
+          title: 'virtualList',
+          auth: ['admin', 'user'],
+        },
+      },
     ],
   },
 ]
