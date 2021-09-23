@@ -8,24 +8,27 @@
         :label-col="formLayout.labelCol"
         :wrapper-col="formLayout.wrapperCol"
       >
-        <a-form-item :label="$t('common.user')" v-bind="validateInfos.username">
+        <a-form-item v-bind="validateInfos.username">
           <a-input
             v-model:value="loginForm.username"
             placeholder="admin/user"
           />
         </a-form-item>
-        <a-form-item
-          :label="$t('common.password')"
-          v-bind="validateInfos.password"
-        >
+        <a-form-item v-bind="validateInfos.password">
           <a-input v-model:value="loginForm.password" placeholder="123456" />
         </a-form-item>
       </a-form>
+      <div class="login-control">
+        <a-checkbox>{{$t('common.remember')}}</a-checkbox>
+        <a href="" style="color: #0960bd"> {{$t('common.forget')}}？ </a>
+      </div>
       <div class="login-form-operations">
         <a-button block type="primary" @click.prevent="handleSubmit">
-          {{$t('common.loginIn')}}
+          {{ $t('common.loginIn') }}
         </a-button>
-        <a-button block @click="handleReset"> {{$t('common.reset')}}</a-button>
+        <a-button block @click="handleReset">
+          {{ $t('common.reset') }}</a-button
+        >
       </div>
     </div>
   </div>
@@ -117,6 +120,10 @@ const formLayout = {
     border: 1px solid #e8e8e8;
     border-radius: 4px;
     padding: 20px;
+    .login-control {
+      display: flex;
+      justify-content: space-between;
+    }
     .login-form-operations {
       .ant-btn {
         margin: 8px 0;

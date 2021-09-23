@@ -13,7 +13,7 @@
         <GithubOutlined @click="handleClickGit" />
       </div>
 
-<LangMenu/>
+      <LangMenu />
       <!-- <a-dropdown>
         <span style="width: 60px" class="header-right-item">
           {{ $t('system.language') }}
@@ -30,7 +30,9 @@
         </template>
       </a-dropdown> -->
       <a-dropdown>
-        <span class="header-right-item">管理</span>
+        <span class="header-right-item">
+          <a-avatar src="/src/assets/img/avatar.jpg"></a-avatar>
+        </span>
         <template #overlay>
           <a-menu>
             <a-menu-item>
@@ -70,11 +72,14 @@ const { isFull, requestFullScreen, exitFullScreen } = useFullScreen()
 const handleClickGit = () => {
   location.href = 'https://github.com/BaiFangZi/vue3-antd-manage'
 }
-const handleLoginOut = () => {
-  store.commit('app/CLEAR_LANG')
+const cleanSys = () => {
+  // store.commit('app/CLEAR_LANG')
   store.commit('app/CLEAR_AMAP_KEY')
   store.commit('app/CLEAR_BMAP_KEY')
   store.commit('auth/CLEAR_AUTH')
+}
+const handleLoginOut = () => {
+  cleanSys()
   router.replace('/login')
 }
 </script>
