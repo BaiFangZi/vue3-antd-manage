@@ -27,7 +27,7 @@ export default [
         component: () => import('@/views/permission/adminPermission.vue'),
         meta: {
           title: 'adminPermission',
-          auth: ['admin', 'user'],
+          auth: ['admin'],
         },
       },
       {
