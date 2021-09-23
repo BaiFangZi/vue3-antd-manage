@@ -57,6 +57,15 @@ export default [
           auth: ['admin', 'user'],
         },
       },
+      {
+        path: '/lazyLoad',
+        name: 'LazyLoad',
+        component: () => import('@/views/realProject/lazyLoad/index.vue'),
+        meta: {
+          title: 'lazyLoad',
+          auth: ['admin', 'user'],
+        },
+      },
     ],
   },
 ]

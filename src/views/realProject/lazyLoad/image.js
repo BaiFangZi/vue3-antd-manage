@@ -1,0 +1,18 @@
+export default [
+  'https://t7.baidu.com/it/u=742736169,1523853901&fm=193&f=GIF',
+  'https://t7.baidu.com/it/u=891445688,2825285764&fm=193&f=GIF',
+  'https://t7.baidu.com/it/u=3479308284,2668629541&fm=193&f=GIF',
+  'https://t7.baidu.com/it/u=773912485,3665540101&fm=193&f=GIF',
+  'https://t7.baidu.com/it/u=999407446,1322128179&fm=193&f=GIF',
+  'https://t7.baidu.com/it/u=615406703,1999285934&fm=193&f=GIF',
+  'https://t7.baidu.com/it/u=293133037,1419631142&fm=193&f=GIF',
+  'https://t7.baidu.com/it/u=49543540,1854823208&fm=193&f=GIF',
+  'https://t7.baidu.com/it/u=3862517085,2815801974&fm=193&f=GIF',
+  'https://t7.baidu.com/it/u=4228258578,2456698349&fm=193&f=GIF',
+  'https://t7.baidu.com/it/u=4183185265,1853341179&fm=193&f=GIF',
+  'https://t7.baidu.com/it/u=56642426,655963550&fm=193&f=GIF',
+  'https://t7.baidu.com/it/u=4229421686,2766144395&fm=193&f=GIF',
+  'https://t7.baidu.com/it/u=1554223349,3160501874&fm=193&f=GIF',
+  'https://t7.baidu.com/it/u=47529086,775058178&fm=193&f=GIF',
+  'https://t7.baidu.com/it/u=2381768795,1361328053&fm=193&f=GIF',
+]

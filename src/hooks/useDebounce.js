@@ -1,5 +1,4 @@
 export const useDebounce = (func, wait = 100, immediate = false) => {
-  console.log(111)
   let timeout, args, context, timestamp, result
 
   const later = function () {

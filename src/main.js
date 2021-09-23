@@ -51,7 +51,9 @@ router.afterEach((to, from) => {
 const app = createApp(App)
 
 import Has from '@/directive/has'
+import Lazy from '@/directive/lazy'
 app.directive('has', Has)
+app.directive('lazy', Lazy)
 
 import TableHeader from '@/components/TableHeader/index.vue'
 app.component('TableHeader', TableHeader)

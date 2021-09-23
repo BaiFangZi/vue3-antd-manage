@@ -27,7 +27,7 @@ const listView = ref(null)
 const listItem = ref(null)
 
 const startIndex = ref(0)
-const endIndex = ref(10)
+// const endIndex = ref(10)
 const listData = ref([])
 const listFill = ref(null)
 const total = ref(10000)
@@ -41,13 +41,16 @@ onMounted(() => {
   }
   listFill.value.style.height = unref(total) * unref(itemHeight) + 'px'
 })
+const endIndex = computed(() => {
+  return unref(startIndex) + 10
+})
 const viewData = computed(() =>
   listData.value.slice(unref(startIndex), unref(endIndex))
 )
 const handleScroll = (e) => {
   const scrollTop = e.target.scrollTop
   startIndex.value = Math.floor(scrollTop / unref(itemHeight))
-  endIndex.value = unref(startIndex) + 10
+  // endIndex.value = unref(startIndex) + 10
   listView.value.style.transform = `translateY(${
     unref(startIndex) * unref(itemHeight)
   }px)`

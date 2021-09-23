@@ -56,7 +56,8 @@ const realProject = {
   axiosCancel: 'AxiosCancel',
   download: 'Download',
   websocket: 'WebSocket',
-  virtualList:'VirtualList'
+  virtualList: 'VirtualList',
+  lazyLoad: 'LazyLoad',
 }
 export default {
   dashboard: 'Dashboard',

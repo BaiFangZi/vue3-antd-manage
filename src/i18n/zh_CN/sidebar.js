@@ -60,6 +60,7 @@ const realProject = {
   download: '文件下载',
   websocket: 'WebSocket',
   virtualList: '虚拟列表',
+  lazyLoad: '懒加载',
 }
 export default {
   dashboard: '首页',
