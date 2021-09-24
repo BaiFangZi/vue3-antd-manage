@@ -29,9 +29,11 @@
   "devDependencies": {
     "@vitejs/plugin-vue": "^1.6.0",
     "@vue/compiler-sfc": "^3.0.5",
+    "less": "^4.1.1",
     "sass": "^1.38.2",
     "sass-loader": "^12.1.0",
     "unplugin-vue-components": "^0.14.9",
-    "vite": "^2.5.1"
+    "vite": "^2.5.1",
+    "vite-plugin-style-import": "^1.2.1"
   }
 }

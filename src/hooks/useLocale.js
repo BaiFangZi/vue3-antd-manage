@@ -6,7 +6,7 @@ export function useLocale() {
   const globalI18n = i18n.global
   async function changeLang(locale) {
     // const curLocale = unref(globalI18n.locale)
-    let messages = (await import(`../i18n/${locale}`)).default
+    let messages = (await import(`../i18n/lang/${locale}.js`)).default
     globalI18n.setLocaleMessage(locale, messages)
   }
   function getAntdLocale() {

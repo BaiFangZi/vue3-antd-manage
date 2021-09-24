@@ -19,8 +19,8 @@
         </a-form-item>
       </a-form>
       <div class="login-control">
-        <a-checkbox>{{$t('common.remember')}}</a-checkbox>
-        <a href="" style="color: #0960bd"> {{$t('common.forget')}}？ </a>
+        <a-checkbox>{{ $t('common.remember') }}</a-checkbox>
+        <a href="" style="color: #0960bd"> {{ $t('common.forget') }}？ </a>
       </div>
       <div class="login-form-operations">
         <a-button block type="primary" @click.prevent="handleSubmit">
@@ -116,7 +116,7 @@ const formLayout = {
 
   .login-form {
     width: 400px;
-    height: 240px;
+    height: 290px;
     border: 1px solid #e8e8e8;
     border-radius: 4px;
     padding: 20px;

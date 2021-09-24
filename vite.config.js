@@ -1,6 +1,8 @@
 import { defineConfig, loadEnv } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import path from 'path'
+import styleImport from 'vite-plugin-style-import' //按需加载样式
+
 // import ViteComponents, { AntDesignVueResolver } from 'vite-plugin-components'
 //  import Components from 'unplugin-vue-components/vite'
 //  import { AntDesignVueResolver } from 'unplugin-vue-components/resolvers'
@@ -9,17 +11,29 @@ import path from 'path'
 export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, __dirname) // 获取全局变量
   return {
+    base: env.VITE_BASE_PATH,
+    css: {
+      preprocessorOptions: {
+        less: {
+          modifyVars: {},
+          javascriptEnabled: true,
+        },
+      },
+    },
     plugins: [
       vue(),
 
-      // ViteComponents({
-      //   customComponentResolvers: [AntDesignVueResolver()],
-      // }),
-      // Components({
-      //   resolvers: [
-      //     AntDesignVueResolver(),
-      //   ],
-      // })
+      styleImport({
+        libs: [
+          {
+            libraryName: 'ant-design-vue',
+            esModule: true,
+            resolveStyle: (name) => {
+              return `ant-design-vue/es/${name}/style/index`
+            },
+          },
+        ],
+      }),
     ],
     build: {
       rollupOptions: {
@@ -32,7 +46,7 @@ export default defineConfig(({ mode }) => {
     },
     server: {
       //本地服务
-      port: 3000, //端口号
+      port: 3001, //端口号
       open: true, //启动时是否自动打开
       proxy: {
         '/vue-manage': {

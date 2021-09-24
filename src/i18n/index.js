@@ -3,7 +3,7 @@ import { createI18n } from 'vue-i18n'
 
 async function createI18nOptions() {
   const locale = localStorage.getItem('language') || 'zh_CN'
-  let messages = (await import(`./${locale}`)).default
+  let messages = (await import(`./lang/${locale}.js`)).default
   // let messages = messagesDefault.default
   return {
     // legacy: false, // Composition API 模式

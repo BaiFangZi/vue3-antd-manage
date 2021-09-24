@@ -3,9 +3,9 @@ import App from './App.vue'
 import router from '@/router/index.js'
 import store from '@/store'
 import { setupI18n } from '@/i18n'
-// import {setupAntd} from '@/plugins/antd'
-import 'ant-design-vue/dist/antd.css'
-import Antd from 'ant-design-vue'
+import {setupAntd} from '@/plugins/antd'
+// import 'ant-design-vue/dist/antd.css'
+// import Antd from 'ant-design-vue'
 import nProgress from '@/plugins/nProgress'
 // 全局样式
 import '@/assets/global.scss'
@@ -49,6 +49,7 @@ router.afterEach((to, from) => {
   nProgress.done()
 })
 const app = createApp(App)
+setupAntd(app)
 
 import Has from '@/directive/has'
 import Lazy from '@/directive/lazy'
@@ -67,6 +68,6 @@ for (let c in AntdIcon) {
 
 async function initApp(app) {
   await setupI18n(app)
-  app.use(store).use(router).use(Antd).mount('#app')
+  app.use(store).use(router).mount('#app')
 }
 initApp(app)
