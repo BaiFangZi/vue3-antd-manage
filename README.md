@@ -6,7 +6,7 @@
 
 ![image-20210924112335151](https://gitee.com/baifangzi/blogimage/raw/master/img/20210924112336.png)
 
-项目预览地址：[vue3-antd-manange](https://baifangzi.gitee.io/vue3-antd-manage/#/dashboard)
+项目预览地址：[vue3-antd-manange](https://baifangzi.gitee.io/vue3-antd-manage/dashboard)
 
 项目地址：[github](https://github.com/BaiFangZi/vue3-antd-manage)
 
