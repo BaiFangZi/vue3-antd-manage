@@ -28,8 +28,10 @@ import {
   Checkbox,
   Avatar,
   Statistic,
+  Alert,
   // Input
 } from 'ant-design-vue'
+import * as AntdIcon from '@ant-design/icons-vue'
 import 'ant-design-vue/dist/antd.css'
 export function setupAntd(app) {
   app.use(Button)
@@ -62,4 +64,8 @@ export function setupAntd(app) {
   app.use(Checkbox)
   app.use(Avatar)
   app.use(Statistic)
+  app.use(Alert)
+  for (let c in AntdIcon) {
+    app.component(c, AntdIcon[c])
+  }
 }

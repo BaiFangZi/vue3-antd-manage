@@ -3,9 +3,10 @@ import App from './App.vue'
 import router from '@/router/index.js'
 import store from '@/store'
 import { setupI18n } from '@/i18n'
-import {setupAntd} from '@/plugins/antd'
-// import 'ant-design-vue/dist/antd.css'
-// import Antd from 'ant-design-vue'
+import { setupAntd } from '@/plugins/antd'
+import { setupComponent } from '@/components'
+import { setupDirective } from '@/directives'
+
 import nProgress from '@/plugins/nProgress'
 // 全局样式
 import '@/assets/global.scss'
@@ -43,28 +44,15 @@ router.beforeEach((to, from, next) => {
   }
 })
 router.afterEach((to, from) => {
-  // to and from are both route objects.
-  //  setTimeout(()=> nProgress.done(),500)
-
   nProgress.done()
 })
 const app = createApp(App)
+// 注册 ant-design-vue 组件和图标
 setupAntd(app)
-
-import Has from '@/directive/has'
-import Lazy from '@/directive/lazy'
-app.directive('has', Has)
-app.directive('lazy', Lazy)
-
-import TableHeader from '@/components/TableHeader/index.vue'
-app.component('TableHeader', TableHeader)
-import LangMenu from '@/components/LangMenu/index.vue'
-app.component('LangMenu', LangMenu)
-import * as AntdIcon from '@ant-design/icons-vue'
-
-for (let c in AntdIcon) {
-  app.component(c, AntdIcon[c])
-}
+// 注册全局组件
+setupComponent(app)
+// 注册自定义指令
+setupDirective(app)
 
 async function initApp(app) {
   await setupI18n(app)

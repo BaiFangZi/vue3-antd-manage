@@ -30,3 +30,5 @@ export { constantRoutes } from './constantRoutes'
 export { asyncRoutes } from './asyncRoutes'
 
 export default router
+
+
