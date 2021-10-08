@@ -11,6 +11,7 @@ const nestMenu = {
 }
 
 const component = {
+  icon:'图标',
   component: '常用组件',
   table: '表格',
   basicTable: '基础表格',

@@ -6,12 +6,21 @@ export default [
     meta: {
       title: 'component',
       auth: ['admin', 'user'],
-      icon:'PicCenterOutlined'
+      icon: 'PicCenterOutlined',
     },
-    redirect:{
-      path:'/table',
+    redirect: {
+      path: '/table',
     },
     children: [
+      {
+        path: '/icon',
+        name: 'Icon',
+        component: () => import('@/views/components-demo/icon/index.vue'),
+        meta: {
+          title: 'icon',
+          auth: ['admin', 'user'],
+        },
+      },
       {
         path: '/table',
         name: 'Table',
@@ -20,8 +29,8 @@ export default [
           title: 'table',
           auth: ['admin', 'user'],
         },
-        redirect:{
-          path:'/basic-table',
+        redirect: {
+          path: '/basic-table',
         },
         children: [
           {
@@ -44,8 +53,8 @@ export default [
           title: 'form',
           auth: ['admin', 'user'],
         },
-        redirect:{
-          path:'/basic-form',
+        redirect: {
+          path: '/basic-form',
         },
         children: [
           {
@@ -68,8 +77,8 @@ export default [
           title: 'modal',
           auth: ['admin', 'user'],
         },
-        redirect:{
-          path:'/basic-modal',
+        redirect: {
+          path: '/basic-modal',
         },
         children: [
           {
@@ -92,8 +101,8 @@ export default [
           title: 'drawer',
           auth: ['admin', 'user'],
         },
-        redirect:{
-          path:'/basic-drawer',
+        redirect: {
+          path: '/basic-drawer',
         },
         children: [
           {
@@ -116,8 +125,8 @@ export default [
           title: 'upload',
           auth: ['admin', 'user'],
         },
-        redirect:{
-          path:'/basic-upload',
+        redirect: {
+          path: '/basic-upload',
         },
         children: [
           {
@@ -140,8 +149,8 @@ export default [
           title: 'list',
           auth: ['admin', 'user'],
         },
-        redirect:{
-          path:'/basic-list',
+        redirect: {
+          path: '/basic-list',
         },
         children: [
           {
@@ -149,7 +158,7 @@ export default [
             name: 'BasicList',
             component: () =>
               // import('@/views/components-demo/list/basicList.vue'), // 出错 500
-              import('@/views/components-demo/list/basicList.vue'),  //正常使用
+              import('@/views/components-demo/list/basicList.vue'), //正常使用
             meta: {
               title: 'basicList',
               auth: ['admin', 'user'],
@@ -165,8 +174,8 @@ export default [
           title: 'tree',
           auth: ['admin', 'user'],
         },
-        redirect:{
-          path:'/basic-tree',
+        redirect: {
+          path: '/basic-tree',
         },
         children: [
           {

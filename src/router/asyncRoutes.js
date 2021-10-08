@@ -1,9 +1,9 @@
-import nestMenu from './medules/nestMenu'
-import component from './medules/component'
-import plugin from './medules/plugin'
-import chart from './medules/chart'
-import permission from './medules/permission'
-import realProject from './medules/realProject'
+import nestMenu from './modules/nestMenu'
+import component from './modules/component'
+import plugin from './modules/plugin'
+import chart from './modules/chart'
+import permission from './modules/permission'
+import realProject from './modules/realProject'
 export const asyncRoutes = [
   {
     path: '/dashboard',

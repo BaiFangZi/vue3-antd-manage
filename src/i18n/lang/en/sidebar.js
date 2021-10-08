@@ -12,6 +12,7 @@ const nestMenu = {
 
 const component = {
   component: 'Component',
+  icon: 'Icon',
   table: 'Table',
   basicTable: 'BasicTable',
   form: 'Form',

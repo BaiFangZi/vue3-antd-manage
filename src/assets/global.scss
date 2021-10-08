@@ -1,5 +1,5 @@
 html,
-body {
+body,ul,li {
   margin: 0;
   padding: 0;
 }
@@ -10,6 +10,9 @@ body {
   min-height: 100%;
 }
 
+li{
+  list-style: none;
+}
 a {
   color: #000 ;
   text-decoration: none;
