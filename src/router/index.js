@@ -22,7 +22,7 @@ const routes = [
 ]
 
 const router = createRouter({
-  history: createWebHistory('/vue3-antd-manage/'),
+  history: createWebHashHistory('/vue3-antd-manage/'),
   routes,
 })
 

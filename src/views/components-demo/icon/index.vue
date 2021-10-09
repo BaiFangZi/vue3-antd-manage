@@ -38,15 +38,28 @@
     </a-col>
     <a-col :span="24">
       <a-card title="自定义Svg图标">
-        <ul class="icon-list">
-          <li><img src="/src/assets/icon/blog.svg" alt="" /></li>
-          <li><img src="/src/assets/icon/blog.svg" alt="" /></li>
-          <li><img src="/src/assets/icon/github.svg" alt="" /></li>
-          <li><img src="/src/assets/icon/juejin.svg" alt="" /></li>
-          <li><img src="/src/assets/icon/qq.svg" alt="" /></li>
-          <li><img src="/src/assets/icon/weixin.svg" alt="" /></li>
-          <li><img src="/src/assets/icon/zhihu.svg" alt="" /></li>
-        </ul>
+        <a-tabs>
+          <a-tab-pane key="tagSvg" tab="html标签使用">
+            <ul class="icon-list">
+              <li><embed src="/src/assets/icon/blog.svg" /></li>
+              <li><embed src="/src/assets/icon/github.svg" /></li>
+              <li><embed src="/src/assets/icon/juejin.svg" /></li>
+              <li><embed src="/src/assets/icon/qq.svg" /></li>
+              <li><embed src="/src/assets/icon/weixin.svg" /></li>
+              <li><embed src="/src/assets/icon/zhihu.svg" /></li>
+            </ul>
+          </a-tab-pane>
+          <a-tab-pane key="comSvg" tab="vue组件使用">
+            <ul class="icon-list">
+              <li><SvgIcon size="32" name="blog" /></li>
+              <li><SvgIcon size="32" name="github" /></li>
+              <li><SvgIcon size="32" name="juejin" /></li>
+              <li><SvgIcon size="32" name="qq" /></li>
+              <li><SvgIcon size="32" name="weixin" /></li>
+              <li><SvgIcon size="32" name="zhihu" /></li>
+            </ul>
+          </a-tab-pane>
+        </a-tabs>
       </a-card>
     </a-col>
     <a-col :span="24">

@@ -29,6 +29,7 @@ import {
   Avatar,
   Statistic,
   Alert,
+  Result
   // Input
 } from 'ant-design-vue'
 import * as AntdIcon from '@ant-design/icons-vue'
@@ -65,6 +66,7 @@ export function setupAntd(app) {
   app.use(Avatar)
   app.use(Statistic)
   app.use(Alert)
+  app.use(Result)
   for (let c in AntdIcon) {
     app.component(c, AntdIcon[c])
   }

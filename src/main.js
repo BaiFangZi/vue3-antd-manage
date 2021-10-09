@@ -1,3 +1,5 @@
+import 'virtual:svg-icons-register' // 注册雪碧图插件
+
 import { createApp } from 'vue'
 import App from './App.vue'
 import router from '@/router/index.js'

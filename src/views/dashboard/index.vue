@@ -16,7 +16,7 @@
       <p>
         项目预览地址 ：<a
           style="color: #1890ff"
-          href="https://baifangzi.gitee.io/vue3-antd-manage/dashboard"
+          href="https://baifangzi.gitee.io/vue3-antd-manage"
           >点击预览</a
         >
       </p>
