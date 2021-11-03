@@ -11,7 +11,7 @@ const nestMenu = {
 }
 
 const component = {
-  icon:'图标',
+  icon: '图标',
   component: '常用组件',
   table: '表格',
   basicTable: '基础表格',
@@ -71,5 +71,6 @@ export default {
   ...chart,
   ...permission,
   ...realProject,
+  setting: '系统设置',
   about: '关于',
 }

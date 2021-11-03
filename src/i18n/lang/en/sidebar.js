@@ -68,5 +68,6 @@ export default {
   ...chart,
   ...permission,
   ...realProject,
+  setting:'Setting',
   about: 'About',
 }
