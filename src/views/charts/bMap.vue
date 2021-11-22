@@ -1,11 +1,7 @@
 <template>
   <div class="bmap-content">
     <a-input-group compact>
-      <a-input
-        style="width: 50%"
-        v-model:value="bMapKey"
-        :placeholder="$t('tip.bMapInput')"
-      />
+      <a-input v-model:value="bMapKey" style="width: 50%" :placeholder="$t('tip.bMapInput')" />
       <a-button type="primary" @click="handleCreateBMap">生成地图</a-button>
     </a-input-group>
     <div ref="bMapContent" class="bmap"></div>
@@ -13,7 +9,7 @@
 </template>
 
 <script setup>
-import { ref, unref, onMounted } from 'vue'
+import { ref, unref } from 'vue'
 import { useScript } from '@/hooks/useScript'
 import { useStore } from 'vuex'
 // const { createScript } = useScript()
@@ -25,7 +21,7 @@ const { createScript } = useScript()
 
 const handleCreateBMap = () => {
   createScript({
-    src: `https://api.map.baidu.com/getscript?v=3.0&ak=${bMapKey}&services=&t=20210201100830`,
+    src: `https://api.map.baidu.com/getscript?v=3.0&ak=${bMapKey.value}&services=&t=20210201100830`,
   }).then((res) => {
     const BMap = window.BMap
     const map = new BMap.Map(unref(bMapContent))
@@ -51,6 +47,7 @@ const handleCreateBMap = () => {
 <style lang="scss">
 .bmap-content {
   height: 100%;
+
   .bmap {
     margin-top: 10px;
     height: calc(100vh - 154px);

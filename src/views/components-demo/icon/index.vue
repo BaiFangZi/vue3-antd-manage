@@ -41,12 +41,12 @@
         <a-tabs>
           <a-tab-pane key="tagSvg" tab="html标签使用">
             <ul class="icon-list">
-              <li><embed src="/src/assets/icon/blog.svg" /></li>
-              <li><embed src="/src/assets/icon/github.svg" /></li>
-              <li><embed src="/src/assets/icon/juejin.svg" /></li>
-              <li><embed src="/src/assets/icon/qq.svg" /></li>
-              <li><embed src="/src/assets/icon/weixin.svg" /></li>
-              <li><embed src="/src/assets/icon/zhihu.svg" /></li>
+              <li><embed :src="blogSrc" /></li>
+              <li><embed :src="githubSrc" /></li>
+              <li><embed :src="juejinSrc" /></li>
+              <li><embed :src="qqSrc" /></li>
+              <li><embed :src="weixinSrc" /></li>
+              <li><embed :src="zhihuSrc" /></li>
             </ul>
           </a-tab-pane>
           <a-tab-pane key="comSvg" tab="vue组件使用">
@@ -91,8 +91,13 @@
 </template>
 
 <script setup>
+import blogSrc from '@/assets/icon/blog.svg'
+import githubSrc from '@/assets/icon/github.svg'
+import qqSrc from '@/assets/icon/qq.svg'
+import weixinSrc from '@/assets/icon/weixin.svg'
+import juejinSrc from '@/assets/icon/juejin.svg'
+import zhihuSrc from '@/assets/icon/zhihu.svg'
 import { createFromIconfontCN } from '@ant-design/icons-vue'
-import { ref } from 'vue'
 const IconFont = createFromIconfontCN({
   scriptUrl: '//at.alicdn.com/t/font_2853787_zrjbr6b8rnh.js',
 })
@@ -101,9 +106,11 @@ const IconFont = createFromIconfontCN({
 
 <style lang="scss">
 @import url('/src/assets/font/iconfont.css');
+
 .icon-list {
   display: flex;
 }
+
 .icon-list li {
   padding: 0 10px;
   margin: 0 10px;

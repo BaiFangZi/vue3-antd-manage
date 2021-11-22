@@ -19,6 +19,6 @@ setOption(props.option)
 
 <style lang="scss">
 #bar-chart {
-height: 300px;
+  height: 300px;
 }
 </style>

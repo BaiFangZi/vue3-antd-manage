@@ -8,6 +8,11 @@
     <router-view class="content"></router-view>
   </a-layout-content>
 </template>
+<script>
+export default {
+  name: 'LayoutContent',
+}
+</script>
 <style lang="scss">
 .content {
   background-color: #fff;

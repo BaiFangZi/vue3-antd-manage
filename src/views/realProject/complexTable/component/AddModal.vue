@@ -10,11 +10,8 @@
           <a-rate v-model:value="modelRef.star" />
         </a-form-item> -->
         <a-form-item label="upgraded" v-bind="validateInfos.upgraded">
-          <a-select
-            v-model:value="modelRef.upgraded"
-            placeholder="please select your upgraded"
-          >
-            <a-select-option v-for="i in 10" :value="i" :key="i">
+          <a-select v-model:value="modelRef.upgraded" placeholder="please select your upgraded">
+            <a-select-option v-for="i in 10" :key="i" :value="i">
               {{ i }}
             </a-select-option>
           </a-select>
@@ -31,7 +28,7 @@
 </template>
 
 <script setup>
-import { defineComponent, ref, reactive, toRaw } from 'vue'
+import { ref, reactive, toRaw } from 'vue'
 import { Form } from 'ant-design-vue'
 const useForm = Form.useForm
 
@@ -89,6 +86,4 @@ const showModal = () => {
   visible.value = true
 }
 </script>
-<style lang="scss">
-
-</style>
+<style lang="scss"></style>

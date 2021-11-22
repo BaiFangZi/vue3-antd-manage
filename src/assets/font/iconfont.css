@@ -13,59 +13,59 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-yanjing:before {
+.icon-yanjing::before {
   content: "\e60b";
 }
 
-.icon-xunhuan:before {
+.icon-xunhuan::before {
   content: "\e699";
 }
 
-.icon-location:before {
+.icon-location::before {
   content: "\e600";
 }
 
-.icon-jietu:before {
+.icon-jietu::before {
   content: "\e609";
 }
 
-.icon-diaojiaofangda:before {
+.icon-diaojiaofangda::before {
   content: "\e66d";
 }
 
-.icon-diaojiaosuoxiao:before {
+.icon-diaojiaosuoxiao::before {
   content: "\e66e";
 }
 
-.icon-jujiao:before {
+.icon-jujiao::before {
   content: "\e603";
 }
 
-.icon-lamp:before {
+.icon-lamp::before {
   content: "\e6ae";
 }
 
-.icon-icon_guangquanjian:before {
+.icon-icon_guangquanjian::before {
   content: "\e61d";
 }
 
-.icon-icon_jujiaojian:before {
+.icon-icon_jujiaojian::before {
   content: "\e620";
 }
 
-.icon-icon_guangquanjia:before {
+.icon-icon_guangquanjia::before {
   content: "\e61f";
 }
 
-.icon-icon_jujiaojia:before {
+.icon-icon_jujiaojia::before {
   content: "\e621";
 }
 
-.icon-jingtouchushihua:before {
+.icon-jingtouchushihua::before {
   content: "\e650";
 }
 
-.icon-yushua:before {
+.icon-yushua::before {
   content: "\e655";
 }
 

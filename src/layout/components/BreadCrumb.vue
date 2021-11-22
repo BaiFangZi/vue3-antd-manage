@@ -13,15 +13,15 @@
   </div>
 </template>
 <script setup>
-import { computed, isRef, ref, watch } from 'vue'
+import { ref, watch } from 'vue'
 import { useRoute } from 'vue-router'
 // import { setLocalLang } from '@/hooks/usei18n'
-const route = useRoute()
+const $route = useRoute()
 let matchedRoute = ref([])
 watch(
-  () => route.matched,
+  () => $route.matched,
   () => {
-    matchedRoute.value = route.matched.slice(1)
+    matchedRoute.value = $route.matched.slice(1)
   },
   {
     immediate: true,

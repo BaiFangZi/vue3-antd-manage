@@ -9,46 +9,30 @@
       :data-source="tableData"
       :pagination="pagination"
       :loading="loading"
-      @change="handleTableChange"
       :row-selection="{
         selectedRowKeys: selectedRowKeys,
         onChange: onSelectChange,
       }"
+      @change="handleTableChange"
     >
       <template #name="{ text, record }">
         <div class="editable-cell">
-          <div
-            v-if="editableData[record.id]"
-            class="editable-cell-input-wrapper"
-          >
-            <a-input
-              v-model:value="editableData[record.id].name"
-              @pressEnter="save(record.id)"
-            />
-            <check-outlined
-              class="editable-cell-icon-check"
-              @click="save(record.id)"
-            />
+          <div v-if="editableData[record.id]" class="editable-cell-input-wrapper">
+            <a-input v-model:value="editableData[record.id].name" @press-enter="save(record.id)" />
+            <check-outlined class="editable-cell-icon-check" @click="save(record.id)" />
           </div>
           <div v-else class="editable-cell-text-wrapper">
             {{ text || ' ' }}
-            <edit-outlined
-              class="editable-cell-icon"
-              @click="edit(record.id)"
-            />
+            <edit-outlined class="editable-cell-icon" @click="edit(record.id)" />
           </div>
         </div>
       </template>
       <template #status="{ text }">
-        <a-tag color="#87d068" v-if="text">在线</a-tag>
-        <a-tag color="#f50" v-else>离线</a-tag>
+        <a-tag v-if="text" color="#87d068">在线</a-tag>
+        <a-tag v-else color="#f50">离线</a-tag>
       </template>
       <template #operations="{ record }">
-        <a-button
-          size="small"
-          style="margin-right: 5px"
-          @click="handleUpdate(record)"
-        >
+        <a-button size="small" style="margin-right: 5px" @click="handleUpdate(record)">
           编辑
         </a-button>
         <a-popconfirm
@@ -64,7 +48,7 @@
     <UpdateModal
       v-if="visible"
       :visible="visible"
-      :updateData="updateData"
+      :update-data="updateData"
       @update="onUpdateTableItem"
       @cancel="visible = false"
     />
@@ -181,7 +165,7 @@ const onUpdateTableItem = () => {
 }
 
 const onSearch = (val) => {
-  console.log('搜索得内容是',val)
+  console.log('搜索得内容是', val)
 }
 const handleDelete = (id) => {
   console.log(id)
@@ -196,10 +180,7 @@ const save = (id) => {
   // 想后台发送更新请求
   loading.value = true
   setTimeout(() => {
-    Object.assign(
-      tableData.value.filter((item) => id === item.id)[0],
-      editableData[id]
-    )
+    Object.assign(tableData.value.filter((item) => id === item.id)[0], editableData[id])
     delete editableData[id]
     loading.value = false
     message.info('更改成功')
@@ -215,6 +196,7 @@ onMounted(() => {
 <style lang="scss" scope>
 .editable-cell {
   position: relative;
+
   .editable-cell-input-wrapper,
   .editable-cell-text-wrapper {
     padding-right: 24px;
@@ -250,6 +232,7 @@ onMounted(() => {
     margin-bottom: 8px;
   }
 }
+
 .editable-cell:hover .editable-cell-icon {
   display: inline-block;
 }

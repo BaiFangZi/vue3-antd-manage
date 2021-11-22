@@ -1,10 +1,3 @@
-// const express = require('express')
-
-// const app = express()
-// app.listen(3000, () => {
-//   console.log('正在运行')
-// })
-
 const WS = require('ws')
 ;((ws) => {
   // debugger

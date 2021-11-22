@@ -2,10 +2,7 @@
   <div>
     <div class="table-title">
       <div class="table-title-item">
-        <a-input
-          v-model:value="exportExcelName"
-          :placeholder="$t('tip.exportExcelInput')"
-        />
+        <a-input v-model:value="exportExcelName" :placeholder="$t('tip.exportExcelInput')" />
         <a-button style="margin-left: 16px" @click="handleExportExcel">{{
           $t('common.exportExcel')
         }}</a-button>
@@ -56,12 +53,7 @@ const handleExportExcel = () => {
   //   return
   // }
   const header = ['id', 'name', 'age', 'address']
-  const data = unref(tableData).map((item) => [
-    item.id,
-    item.name,
-    item.age,
-    item.address,
-  ])
+  const data = unref(tableData).map((item) => [item.id, item.name, item.age, item.address])
   import('@/plugins/Export2Excel').then(({ arrayToExcel }) => {
     arrayToExcel({ header, data, fileName })
   })

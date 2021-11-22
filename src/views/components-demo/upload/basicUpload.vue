@@ -14,33 +14,31 @@
   </a-upload>
 </template>
 <script>
-import { message } from 'ant-design-vue';
+import { message } from 'ant-design-vue'
 // import { UploadOutlined } from '@ant-design/icons-vue';
-import { defineComponent, ref } from 'vue';
+import { defineComponent, ref } from 'vue'
 export default defineComponent({
-
-
   setup() {
-    const handleChange = info => {
+    const handleChange = (info) => {
       if (info.file.status !== 'uploading') {
-        console.log(info.file, info.fileList);
+        console.log(info.file, info.fileList)
       }
 
       if (info.file.status === 'done') {
-        message.success(`${info.file.name} file uploaded successfully`);
+        message.success(`${info.file.name} file uploaded successfully`)
       } else if (info.file.status === 'error') {
-        message.error(`${info.file.name} file upload failed.`);
+        message.error(`${info.file.name} file upload failed.`)
       }
-    };
+    }
 
-    const fileList = ref([]);
+    const fileList = ref([])
     return {
       fileList,
       headers: {
         authorization: 'authorization-text',
       },
       handleChange,
-    };
+    }
   },
-});
+})
 </script>

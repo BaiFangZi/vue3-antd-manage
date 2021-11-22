@@ -69,8 +69,8 @@ onMounted(() => {
           },
         },
         data: [
-          {name:'北京市',value:20},
-          {name:'山东省',value:60}
+          { name: '北京市', value: 20 },
+          { name: '山东省', value: 60 },
         ],
       },
     ],

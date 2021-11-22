@@ -8,15 +8,12 @@
         ant-design-vue，使用vue3.2最新的setup语法搭建，并且封装了部分钩子函数，是用来学习vue3的一个良好选择，并且，项目集成了实际开发中常用的功能，可以作为一个参考项目继续开发
       </p>
       <p>
-        项目地址：<a
-          style="color: #1890ff"
-          href="https://github.com/BaiFangZi/vue3-antd-manage"
-        >github</a>
+        项目地址：<a style="color: #1890ff" href="https://github.com/BaiFangZi/vue3-antd-manage"
+          >github</a
+        >
       </p>
       <p>
-        项目预览地址 ：<a
-          style="color: #1890ff"
-          href="https://baifangzi.gitee.io/vue3-antd-manage"
+        项目预览地址 ：<a style="color: #1890ff" href="https://baifangzi.gitee.io/vue3-antd-manage"
           >点击预览</a
         >
       </p>
@@ -58,6 +55,7 @@ setOption(option)
 .introduction {
   margin-bottom: 30px;
 }
+
 #views-chart {
   // width: 300px;
   background-color: #fff;

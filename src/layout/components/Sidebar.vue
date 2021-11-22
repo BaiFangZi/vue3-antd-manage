@@ -2,19 +2,9 @@
   <!-- <div>
    
   </div> -->
-  <a-layout-sider
-    v-model:collapsed="collapsed"
-    :trigger="null"
-    collapsible
-    class="scrollbar"
-  >
+  <a-layout-sider :collapsed="collapsed" :trigger="null" collapsible class="scrollbar">
     <div class="logo"></div>
-    <a-menu
-      theme="dark"
-      mode="inline"
-      v-model:selectedKeys="selectedKeys"
-      @click="handleGoRouter"
-    >
+    <a-menu v-model:selectedKeys="selectedKeys" theme="dark" mode="inline" @click="handleGoRouter">
       <template v-for="item in menuList" :key="item.path">
         <template v-if="!item.children">
           <a-menu-item v-if="!item.meta.noHidden" :key="item.path">
@@ -65,7 +55,7 @@ const SubMenu = {
 <script setup>
 import { useStore } from 'vuex'
 import { useRouter, useRoute } from 'vue-router'
-import { computed, ref, unref } from '@vue/reactivity'
+import { ref } from '@vue/reactivity'
 import { watch } from '@vue/runtime-core'
 defineProps({
   collapsed: Boolean,
@@ -92,7 +82,6 @@ const handleGoRouter = ({ key }) => {
 </script>
 
 <style lang="scss">
-
 .logo {
   // display: inline-block;
   height: 32px;

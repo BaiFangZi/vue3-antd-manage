@@ -2,7 +2,6 @@
   <div>
     <CityChart />
     <CountryChart />
-   
   </div>
 </template>
 <script setup>

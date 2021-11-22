@@ -1,10 +1,6 @@
 <template>
   <div>
-    <a-divider
-      ><a-button type="primary" @click="handlePrintImg"
-        >打印图片</a-button
-      ></a-divider
-    >
+    <a-divider><a-button type="primary" @click="handlePrintImg">打印图片</a-button></a-divider>
     <div>
       <img width="500" :src="img1Url" alt="" />
       <img width="400" :src="img2Url" alt="" />
@@ -16,27 +12,17 @@
     <div id="print-html-content">
       <p style="text-align: center">文本居中</p>
       <a-descriptions title="User Info" bordered>
-        <a-descriptions-item label="Product"
-          >Cloud Database</a-descriptions-item
-        >
+        <a-descriptions-item label="Product">Cloud Database</a-descriptions-item>
         <a-descriptions-item label="Billing Mode">Prepaid</a-descriptions-item>
         <a-descriptions-item label="Automatic Renewal">YES</a-descriptions-item>
-        <a-descriptions-item label="Order time"
-          >2018-04-24 18:00:00</a-descriptions-item
-        >
-        <a-descriptions-item label="Usage Time" :span="2"
-          >2019-04-24 18:00:00</a-descriptions-item
-        >
+        <a-descriptions-item label="Order time">2018-04-24 18:00:00</a-descriptions-item>
+        <a-descriptions-item label="Usage Time" :span="2">2019-04-24 18:00:00</a-descriptions-item>
         <a-descriptions-item label="Status" :span="3">
           <a-badge status="processing" text="Running" />
         </a-descriptions-item>
-        <a-descriptions-item label="Negotiated Amount"
-          >$80.00</a-descriptions-item
-        >
+        <a-descriptions-item label="Negotiated Amount">$80.00</a-descriptions-item>
         <a-descriptions-item label="Discount">$20.00</a-descriptions-item>
-        <a-descriptions-item label="Official Receipts"
-          >$60.00</a-descriptions-item
-        >
+        <a-descriptions-item label="Official Receipts">$60.00</a-descriptions-item>
         <a-descriptions-item label="Config Info">
           Data disk type: MongoDB
           <br />
@@ -73,10 +59,8 @@
   </div>
 </template>
 <script>
-const img1Url =
-  'https://gitee.com/baifangzi/blogimage/raw/master/img/20210907193825.png'
-const img2Url =
-  'https://gitee.com/baifangzi/blogimage/raw/master/img/20210907193647.png'
+const img1Url = 'https://gitee.com/baifangzi/blogimage/raw/master/img/20210907193825.png'
+const img2Url = 'https://gitee.com/baifangzi/blogimage/raw/master/img/20210907193647.png'
 const jsonData = []
 for (let i = 0; i < 10; i++) {
   jsonData.push({

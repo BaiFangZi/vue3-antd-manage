@@ -2,15 +2,10 @@
   <div>
     <a-row :gutter="16">
       <a-col :span="12">
-        <div class="list-container" ref="listContainer" @scroll="handleScroll">
-          <div class="list-fill" ref="listFill"></div>
-          <div class="list-view" ref="listView">
-            <div
-              class="list-item"
-              ref="listItem"
-              v-for="item in viewData"
-              :key="item.id"
-            >
+        <div ref="listContainer" class="list-container" @scroll="handleScroll">
+          <div ref="listFill" class="list-fill"></div>
+          <div ref="listView" class="list-view">
+            <div v-for="item in viewData" ref="listItem" :key="item.id" class="list-item">
               {{ item.text }}
             </div>
           </div>
@@ -44,21 +39,23 @@ onMounted(() => {
 const endIndex = computed(() => {
   return unref(startIndex) + 10
 })
-const viewData = computed(() =>
-  listData.value.slice(unref(startIndex), unref(endIndex))
-)
+const viewData = computed(() => listData.value.slice(unref(startIndex), unref(endIndex)))
 const handleScroll = (e) => {
   const scrollTop = e.target.scrollTop
   startIndex.value = Math.floor(scrollTop / unref(itemHeight))
   // endIndex.value = unref(startIndex) + 10
-  listView.value.style.transform = `translateY(${
-    unref(startIndex) * unref(itemHeight)
-  }px)`
+  listView.value.style.transform = `translateY(${unref(startIndex) * unref(itemHeight)}px)`
 }
 </script>
 
 <style lang="scss">
 .list-container {
+  // width: 300px;
+  height: 400px;
+  border: 1px solid #e8e8e8;
+  overflow-y: auto;
+  position: relative;
+
   .list-fill {
     position: absolute;
     left: 0;
@@ -66,11 +63,7 @@ const handleScroll = (e) => {
     right: 0;
     z-index: -1;
   }
-  // width: 300px;
-  height: 400px;
-  border: 1px solid #e8e8e8;
-  overflow-y: auto;
-  position: relative;
+
   .list-view {
     .list-item {
       height: 40px;

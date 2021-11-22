@@ -11,7 +11,7 @@ import { registerMap } from 'echarts'
 const { setOption } = useEcharts('#city-chart')
 
 onMounted(() => {
-  registerMap('HK', CityData);
+  registerMap('HK', CityData)
   setOption({
     title: {
       text: '城市地图',
@@ -50,9 +50,9 @@ onMounted(() => {
           show: true,
         },
         data: [
-           // name 对应 数据中的properties对象中的name
-           // 定义nameMap时 重新映射name
-          { name: '中西区', value: 20057.34 }, 
+          // name 对应 数据中的properties对象中的name
+          // 定义nameMap时 重新映射name
+          { name: '中西区', value: 20057.34 },
           { name: '湾仔', value: 15477.48 },
           { name: '东区', value: 31686.1 },
           { name: '南区', value: 6992.6 },

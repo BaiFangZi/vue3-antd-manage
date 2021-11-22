@@ -6,12 +6,8 @@
       </span>
       <template #overlay>
         <a-menu @click="handleChangeLanguage">
-          <a-menu-item :disabled="curLocale == 'zh_CN'" key="zh_CN">
-            中文简体
-          </a-menu-item>
-          <a-menu-item :disabled="curLocale == 'en'" key="en">
-            English</a-menu-item
-          >
+          <a-menu-item key="zh_CN" :disabled="curLocale == 'zh_CN'"> 中文简体 </a-menu-item>
+          <a-menu-item key="en" :disabled="curLocale == 'en'"> English</a-menu-item>
         </a-menu>
       </template>
     </a-dropdown>

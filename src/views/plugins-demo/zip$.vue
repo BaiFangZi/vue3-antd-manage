@@ -2,10 +2,7 @@
   <div>
     <div class="table-title">
       <div class="table-title-item">
-        <a-input
-          v-model:value="exportZipName"
-          :placeholder="$t('tip.exportZipInput')"
-        />
+        <a-input v-model:value="exportZipName" :placeholder="$t('tip.exportZipInput')" />
         <a-button style="margin-left: 16px" @click="handleExportZip">{{
           $t('common.exportZip')
         }}</a-button>
@@ -52,12 +49,7 @@ const handleExportZip = () => {
   let fileName = unref(exportZipName)
 
   const header = ['id', 'name', 'age', 'address']
-  const data = unref(tableData).map((item) => [
-    item.id,
-    item.name,
-    item.age,
-    item.address,
-  ])
+  const data = unref(tableData).map((item) => [item.id, item.name, item.age, item.address])
   import('@/plugins/Export2Zip').then(({ txtToZip }) => {
     txtToZip(header, data, fileName, fileName)
   })

@@ -1,11 +1,6 @@
 <template>
   <div class="add-modal">
-    <a-modal
-      v-model:visible="visible"
-      title="更新项目"
-      @ok="handleSubmit"
-      @cancel="emits('cancel')"
-    >
+    <a-modal :visible="visible" title="更新项目" @ok="handleSubmit" @cancel="emits('cancel')">
       <a-form :label-col="{ span: 6 }">
         <a-form-item label="Name" v-bind="validateInfos.name">
           <a-input v-model:value="modelRef.name" />
@@ -14,11 +9,8 @@
           <a-rate v-model:value="modelRef.star" />
         </a-form-item> -->
         <a-form-item label="upgraded" v-bind="validateInfos.upgraded">
-          <a-select
-            v-model:value="modelRef.upgraded"
-            placeholder="please select your upgraded"
-          >
-            <a-select-option v-for="i in 10" :value="i" :key="i">
+          <a-select v-model:value="modelRef.upgraded" placeholder="please select your upgraded">
+            <a-select-option v-for="i in 10" :key="i" :value="i">
               {{ i }}
             </a-select-option>
           </a-select>
@@ -35,16 +27,7 @@
 </template>
 
 <script setup>
-import {
-  defineComponent,
-  ref,
-  reactive,
-  toRaw,
-  defineEmits,
-  defineProps,
-  isProxy,
-  isReactive,
-} from 'vue'
+import { reactive, toRaw, defineEmits, defineProps, toRefs } from 'vue'
 import { Form } from 'ant-design-vue'
 const useForm = Form.useForm
 
@@ -65,7 +48,7 @@ const props = defineProps({
 //   upgraded: undefined,
 //   status: [],
 // })
-const modelRef = props.updateData
+const modelRef = toRefs(...props.updateData)
 // console.log(isReactive(modelRef))
 // console.log(props,props.updateData,modelRef)
 const rulesRef = reactive({
@@ -109,10 +92,6 @@ const handleSubmit = () => {
     .catch((err) => {
       console.log('error', err)
     })
-}
-
-const showModal = () => {
-  visible.value = true
 }
 </script>
 <style lang="scss"></style>

@@ -19,10 +19,7 @@
               :key="log"
               :class="log.user === 'user1' ? 'current-user' : 'other-user'"
             >
-              <a-avatar
-                class="user"
-                :class="log.user === 'user1' ? 'green' : 'blue'"
-              >
+              <a-avatar class="user" :class="log.user === 'user1' ? 'green' : 'blue'">
                 <template #icon><UserOutlined /></template>
               </a-avatar>
               <span class="value"> {{ log.value }}</span>
@@ -48,10 +45,7 @@
               :key="log"
               :class="log.user === 'user2' ? 'current-user' : 'other-user'"
             >
-              <a-avatar
-                class="user"
-                :class="log.user === 'user1' ? 'green' : 'blue'"
-              >
+              <a-avatar class="user" :class="log.user === 'user1' ? 'green' : 'blue'">
                 <template #icon><UserOutlined /></template>
               </a-avatar>
               <span class="value"> {{ log.value }}</span>
@@ -101,6 +95,7 @@ const handleUser2Send = () => {
     margin: 8px;
   }
 }
+
 .other-user {
   .user,
   .value {
@@ -108,9 +103,11 @@ const handleUser2Send = () => {
     margin: 8px;
   }
 }
+
 .green {
   background: #87d068;
 }
+
 .blue {
   background-color: #1890ff;
 }

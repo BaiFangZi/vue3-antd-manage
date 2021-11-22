@@ -1,5 +1,5 @@
 <template>
-  <div >
+  <div>
     <a-button type="primary" @click="showModal">Open Modal</a-button>
     <a-modal v-model:visible="visible" title="Basic Modal" @ok="handleOk">
       <p>Some contents...</p>
@@ -9,25 +9,25 @@
   </div>
 </template>
 <script>
-import { defineComponent, ref } from 'vue';
+import { defineComponent, ref } from 'vue'
 export default defineComponent({
   setup() {
-    const visible = ref(false);
+    const visible = ref(false)
 
     const showModal = () => {
-      visible.value = true;
-    };
+      visible.value = true
+    }
 
-    const handleOk = e => {
-      console.log(e);
-      visible.value = false;
-    };
+    const handleOk = (e) => {
+      console.log(e)
+      visible.value = false
+    }
 
     return {
       visible,
       showModal,
       handleOk,
-    };
+    }
   },
-});
+})
 </script>

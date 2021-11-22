@@ -5,14 +5,10 @@
     ></a-alert>
 
     <a-button @click="handleDownloadLocalImg">下载本地文件</a-button>
-    <a-button @click="handleDownloadUrlImg" style="margin: 20px">
-      下载远程文件
-    </a-button>
+    <a-button style="margin: 20px" @click="handleDownloadUrlImg"> 下载远程文件 </a-button>
     <a-alert message="FileSaver插件下载"> </a-alert>
     <a-button @click="handleSaveAsLocal">下载本地文件</a-button>
-    <a-button @click="handleSaveAsUrl" style="margin: 20px"
-      >下载远程文件</a-button
-    >
+    <a-button style="margin: 20px" @click="handleSaveAsUrl">下载远程文件</a-button>
   </div>
 </template>
 
@@ -24,10 +20,7 @@ const handleDownloadLocalImg = () => {
 }
 
 const handleDownloadUrlImg = () => {
-  download(
-    'https://img1.baidu.com/it/u=177553704,495132282&fm=26&fmt=auto',
-    '远程图片.png'
-  )
+  download('https://img1.baidu.com/it/u=177553704,495132282&fm=26&fmt=auto', '远程图片.png')
 }
 
 const handleSaveAsLocal = () => {
@@ -37,9 +30,6 @@ const handleSaveAsLocal = () => {
   saveAs(blob, 'hello.txt')
 }
 const handleSaveAsUrl = () => {
-  saveAs(
-    'https://img1.baidu.com/it/u=177553704,495132282&fm=26&fmt=auto',
-    'image.jpg'
-  )
+  saveAs('https://img1.baidu.com/it/u=177553704,495132282&fm=26&fmt=auto', 'image.jpg')
 }
 </script>

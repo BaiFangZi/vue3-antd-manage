@@ -3,18 +3,16 @@ import vue from '@vitejs/plugin-vue'
 import path from 'path'
 import styleImport from 'vite-plugin-style-import' //按需加载样式
 
-
-import SvgIconsPlugin from 'vite-plugin-svg-icons'; // 打包生成svg雪碧图
-
+import SvgIconsPlugin from 'vite-plugin-svg-icons' // 打包生成svg雪碧图
 
 // import ViteComponents, { AntDesignVueResolver } from 'vite-plugin-components'
 //  import Components from 'unplugin-vue-components/vite'
 //  import { AntDesignVueResolver } from 'unplugin-vue-components/resolvers'
 
 // https://vitejs.dev/config/
-export default defineConfig(({ command,mode }) => {
+export default defineConfig(({ command, mode }) => {
   const env = loadEnv(mode, __dirname) // 获取全局变量
-  const isBuild = command ==='build'
+  const isBuild = command === 'build'
   return {
     base: env.VITE_BASE_PATH,
     css: {
@@ -25,6 +23,7 @@ export default defineConfig(({ command,mode }) => {
         },
       },
     },
+    assetsInclude: ['svg'],
     plugins: [
       vue(),
 
@@ -44,8 +43,7 @@ export default defineConfig(({ command,mode }) => {
         svgoOptions: isBuild,
         // default
         symbolId: 'icon-[dir]-[name]',
-      })
-
+      }),
     ],
     build: {
       rollupOptions: {

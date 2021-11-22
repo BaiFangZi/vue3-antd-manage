@@ -31,18 +31,14 @@
       </a-dropdown> -->
       <a-dropdown>
         <span class="header-right-item">
-          <a-avatar src="/src/assets/img/avatar.jpg"></a-avatar>
+          <a-avatar :src="avatar"></a-avatar>
         </span>
         <template #overlay>
           <a-menu>
             <a-menu-item>
-              <router-link to="/setting">{{
-                $t('system.setting')
-              }}</router-link>
+              <router-link to="/setting">{{ $t('system.setting') }}</router-link>
             </a-menu-item>
-            <a-menu-item @click="handleLoginOut">
-              {{ $t('system.loginOut') }}</a-menu-item
-            >
+            <a-menu-item @click="handleLoginOut"> {{ $t('system.loginOut') }}</a-menu-item>
           </a-menu>
         </template>
       </a-dropdown>
@@ -51,6 +47,7 @@
 </template>
 
 <script setup>
+import avatar from '@/assets/img/avatar.jpg'
 // import LangMenu from './LangMenu.vue'
 import BreadCrumb from './BreadCrumb.vue'
 // import { ref, computed } from 'vue'
@@ -90,26 +87,32 @@ const handleLoginOut = () => {
   padding: 0;
   display: flex;
   justify-content: space-between;
+
   .header-left {
     display: flex;
   }
+
   .header-right {
     margin: 0 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+
     .header-right-item {
       margin: 0 6px;
       cursor: pointer;
+
       &:hover {
         color: #1890ff;
       }
     }
+
     .anticon {
       font-size: 20px;
     }
   }
 }
+
 .trigger {
   font-size: 18px;
   line-height: 64px;

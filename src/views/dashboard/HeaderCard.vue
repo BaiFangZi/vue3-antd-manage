@@ -17,29 +17,15 @@
       </a-col>
       <a-col :span="6">
         <a-card>
-          <a-statistic
-            title="卡片三"
-            :value="9.3"
-            suffix="%"
-            :value-style="{ color: '#cf1322' }"
-          >
-            <template #prefix>
-             
-            </template>
+          <a-statistic title="卡片三" :value="9.3" suffix="%" :value-style="{ color: '#cf1322' }">
+            <template #prefix> </template>
           </a-statistic>
         </a-card>
       </a-col>
       <a-col :span="6">
         <a-card>
-          <a-statistic
-            title="卡片四"
-            :value="9.3"
-            suffix="%"
-            :value-style="{ color: '#cf1322' }"
-          >
-            <template #prefix>
-            
-            </template>
+          <a-statistic title="卡片四" :value="9.3" suffix="%" :value-style="{ color: '#cf1322' }">
+            <template #prefix> </template>
           </a-statistic>
         </a-card>
       </a-col>

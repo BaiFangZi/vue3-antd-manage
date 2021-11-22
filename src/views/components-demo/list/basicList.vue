@@ -9,9 +9,7 @@
             <a href="https://www.antdv.com/">{{ item.title }}</a>
           </template>
           <template #avatar>
-            <a-avatar
-              src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"
-            />
+            <a-avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />
           </template>
         </a-list-item-meta>
       </a-list-item>
