@@ -1,12 +1,11 @@
 const login = {
   user: '用户',
   password: '密码',
-  loginIn:'登陆',
-  reset:'重置',
+  loginIn: '登陆',
+  reset: '重置',
   remember: '记住我',
   forget: '忘记密码',
 }
-
 
 export default {
   // language: '中文简体',
@@ -15,4 +14,3 @@ export default {
   exportZip: '导出Zip',
   ...login,
 }
-

@@ -59,6 +59,7 @@ const realProject = {
   websocket: 'WebSocket',
   virtualList: 'VirtualList',
   lazyLoad: 'LazyLoad',
+  drag: 'Drag',
 }
 export default {
   dashboard: 'Dashboard',
@@ -68,6 +69,6 @@ export default {
   ...chart,
   ...permission,
   ...realProject,
-  setting:'Setting',
+  setting: 'Setting',
   about: 'About',
 }

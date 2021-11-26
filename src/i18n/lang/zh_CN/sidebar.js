@@ -62,6 +62,7 @@ const realProject = {
   websocket: 'WebSocket',
   virtualList: '虚拟列表',
   lazyLoad: '懒加载',
+  drag: '拖放',
 }
 export default {
   dashboard: '首页',

@@ -66,6 +66,15 @@ export default [
           auth: ['admin', 'user'],
         },
       },
+      {
+        path: '/drag',
+        name: 'Drag',
+        component: () => import('@/views/realProject/drag/index.vue'),
+        meta: {
+          title: 'drag',
+          auth: ['admin', 'user'],
+        },
+      },
     ],
   },
 ]
