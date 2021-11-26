@@ -1,17 +1,19 @@
 <template>
-  <a-upload
-    v-model:file-list="fileList"
-    name="file"
-    :multiple="true"
-    action="https://www.mocky.io/v2/5cc8019d300000980a055e76"
-    :headers="headers"
-    @change="handleChange"
-  >
-    <a-button>
-      <upload-outlined></upload-outlined>
-      Click to Upload
-    </a-button>
-  </a-upload>
+  <div>
+    <a-upload
+      v-model:file-list="fileList"
+      name="file"
+      :multiple="true"
+      action="https://www.mocky.io/v2/5cc8019d300000980a055e76"
+      :headers="headers"
+      @change="handleChange"
+    >
+      <a-button>
+        <upload-outlined></upload-outlined>
+        Click to Upload
+      </a-button>
+    </a-upload>
+  </div>
 </template>
 <script>
 import { message } from 'ant-design-vue'

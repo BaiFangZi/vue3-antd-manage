@@ -67,6 +67,14 @@ export default defineConfig(({ command, mode }) => {
           },
           logLevel: 'debug',
         },
+        '/local-test': {
+          target: env.VITE_LOCAL_TEST_URL,
+          changeOrigin: true,
+          pathRewrite: {
+            '^/local-test': '',
+          },
+          logLevel: 'debug',
+        },
       },
     },
     clearScreen: false, // vite清屏不清除控制台打印的信息

@@ -36,8 +36,7 @@ export default [
           {
             path: '/basic-table',
             name: 'BasicTable',
-            component: () =>
-              import('@/views/components-demo/table/basicTable.vue'),
+            component: () => import('@/views/components-demo/table/basicTable.vue'),
             meta: {
               title: 'basicTable',
               auth: ['admin', 'user'],
@@ -60,8 +59,7 @@ export default [
           {
             path: '/basic-form',
             name: 'BasicForm',
-            component: () =>
-              import('@/views/components-demo/form/basicForm.vue'),
+            component: () => import('@/views/components-demo/form/basicForm.vue'),
             meta: {
               title: 'basicForm',
               auth: ['admin', 'user'],
@@ -84,8 +82,7 @@ export default [
           {
             path: '/basic-modal',
             name: 'BasicModal',
-            component: () =>
-              import('@/views/components-demo/modal/basicModal.vue'),
+            component: () => import('@/views/components-demo/modal/basicModal.vue'),
             meta: {
               title: 'basicModal',
               auth: ['admin', 'user'],
@@ -108,8 +105,7 @@ export default [
           {
             path: '/basic-drawer',
             name: 'BasicDrawer',
-            component: () =>
-              import('@/views/components-demo/drawer/basicDrawer.vue'),
+            component: () => import('@/views/components-demo/drawer/basicDrawer.vue'),
             meta: {
               title: 'basicDrawer',
               auth: ['admin', 'user'],
@@ -132,10 +128,18 @@ export default [
           {
             path: '/basic-upload',
             name: 'BasicUpload',
-            component: () =>
-              import('@/views/components-demo/upload/basicUpload.vue'),
+            component: () => import('@/views/components-demo/upload/basicUpload.vue'),
             meta: {
               title: 'basicUpload',
+              auth: ['admin', 'user'],
+            },
+          },
+          {
+            path: '/big-file-upload',
+            name: 'BigFileUpload',
+            component: () => import('@/views/components-demo/upload/bigFileUpload.vue'),
+            meta: {
+              title: 'bigFileUpload',
               auth: ['admin', 'user'],
             },
           },
@@ -181,8 +185,7 @@ export default [
           {
             path: '/basic-tree',
             name: 'BasicTree',
-            component: () =>
-              import('@/views/components-demo/tree/basicTree.vue'),
+            component: () => import('@/views/components-demo/tree/basicTree.vue'),
             meta: {
               title: 'basicTree',
               auth: ['admin', 'user'],

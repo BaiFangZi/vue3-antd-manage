@@ -27,6 +27,7 @@ const component = {
   basicTree: 'BasicTree',
   upload: 'Upload',
   basicUpload: 'BasicUpload',
+  bigFileUpload: 'BigFileUpload',
 }
 
 const plugin = {

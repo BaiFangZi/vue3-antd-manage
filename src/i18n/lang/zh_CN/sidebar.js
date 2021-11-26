@@ -27,6 +27,7 @@ const component = {
   basicTree: '基础树列表',
   upload: '上传',
   basicUpload: '基础上传',
+  bigFileUpload: '大文件上传',
 }
 
 const plugin = {

@@ -3,9 +3,10 @@ import qs from 'qs'
 // import { useAxiosCancel } from '@/hooks/useAxiosCancel'
 // const CancelToken = axios.CancelToken
 // const source = CancelToken.source()
+const { VITE_BASE_URL, VITE_LOCAL_TEST_URL, VITE_MODE } = import.meta.env
 
 const request = axios.create({
-  baseURL: import.meta.env.VITE_BASE_URL,
+  baseURL: VITE_BASE_URL,
   // cancelToken: new CancelToken((cancel) => (axiosCancel = cancel)),
 })
 
@@ -62,7 +63,6 @@ function addPendingRequest(config) {
 // export let axiosCancel
 // 根据请求标识移除对应的cancelToken函数，取消请求
 export function removePendingRequest(config) {
-  
   const requestKey = generateReqKey(config)
   if (pendingRequest.has(requestKey)) {
     const axiosCancel = pendingRequest.get(requestKey)
@@ -71,4 +71,7 @@ export function removePendingRequest(config) {
   }
 }
 
+export const localRequest = axios.create({
+  baseURL: VITE_MODE == 'development' ? '/local-test' : VITE_LOCAL_TEST_URL,
+})
 // export
