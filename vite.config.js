@@ -62,18 +62,11 @@ export default defineConfig(({ command, mode }) => {
         '/vue-manage': {
           target: env.VITE_BASE_URL,
           changeOrigin: true,
-          pathRewrite: {
-            '^/vue-manage': '/vue-manage',
-          },
-          logLevel: 'debug',
         },
         '/local-test': {
           target: env.VITE_LOCAL_TEST_URL,
           changeOrigin: true,
-          pathRewrite: {
-            '^/local-test': '',
-          },
-          logLevel: 'debug',
+          rewrite: (path) => path.replace(/^\/local-test/, ''),
         },
       },
     },
@@ -88,5 +81,6 @@ export default defineConfig(({ command, mode }) => {
     optimizeDeps: {
       include: ['vue-i18n'],
     },
+    logLevel: 'info',
   }
 })
