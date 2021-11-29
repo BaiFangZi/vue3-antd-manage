@@ -24,7 +24,7 @@ export const asyncRoutes = [
       title: 'setting',
       auth: ['admin', 'user'],
       icon: 'SettingOutlined',
-      noHidden: true,
+      isHidden: true,
     },
   },
   ...nestMenu,

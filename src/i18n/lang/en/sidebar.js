@@ -61,6 +61,10 @@ const realProject = {
   virtualList: 'VirtualList',
   lazyLoad: 'LazyLoad',
   drag: 'Drag',
+  keepAliveComponent: '组件缓存',
+  aliveRouter1: 'AliveRouter1',
+  aliveRouter2: 'AliveRouter2',
+  aliveRouter3: 'AliveRouter3',
 }
 export default {
   dashboard: 'Dashboard',

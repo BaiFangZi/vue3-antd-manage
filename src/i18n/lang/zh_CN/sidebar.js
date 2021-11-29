@@ -64,6 +64,10 @@ const realProject = {
   virtualList: '虚拟列表',
   lazyLoad: '懒加载',
   drag: '拖放',
+  keepAliveComponent: '组件缓存',
+  aliveRouter1: '缓存1',
+  aliveRouter2: '缓存2',
+  aliveRouter3: '缓存3',
 }
 export default {
   dashboard: '首页',

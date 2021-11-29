@@ -75,6 +75,48 @@ export default [
           auth: ['admin', 'user'],
         },
       },
+      {
+        path: '/keep-alive-component',
+        name: 'KeepAliveComponent',
+        component: () => import('@/views/realProject/keepAliveComponent/index.vue'),
+        meta: {
+          title: 'keepAliveComponent',
+          auth: ['admin', 'user'],
+          // noHidden: false,
+        },
+        children: [
+          {
+            path: '/aliveRouter1',
+            name: 'AliveRouter1',
+            component: () => import('@/views/realProject/keepAliveComponent/aliveRouter1.vue'),
+            meta: {
+              title: 'aliveRouter1',
+              auth: ['admin', 'user'],
+              noHidden: true,
+            },
+          },
+          {
+            path: '/aliveRouter2',
+            name: 'AliveRouter2',
+            component: () => import('@/views/realProject/keepAliveComponent/aliveRouter2.vue'),
+            meta: {
+              title: 'aliveRouter2',
+              auth: ['admin', 'user'],
+              noHidden: true,
+            },
+          },
+          {
+            path: '/aliveRouter3',
+            name: 'AliveRouter3',
+            component: () => import('@/views/realProject/keepAliveComponent/aliveRouter3.vue'),
+            meta: {
+              title: 'aliveRouter3',
+              auth: ['admin', 'user'],
+              noHidden: true,
+            },
+          },
+        ],
+      },
     ],
   },
 ]

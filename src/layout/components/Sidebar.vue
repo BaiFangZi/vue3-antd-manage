@@ -7,7 +7,7 @@
     <a-menu v-model:selectedKeys="selectedKeys" theme="dark" mode="inline" @click="handleGoRouter">
       <template v-for="item in menuList" :key="item.path">
         <template v-if="!item.children">
-          <a-menu-item v-if="!item.meta.noHidden" :key="item.path">
+          <a-menu-item v-if="!item.meta.isHidden" :key="item.path">
             <template #icon>
               <component :is="item.meta.icon"></component>
             </template>
