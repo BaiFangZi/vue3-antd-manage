@@ -30,7 +30,7 @@
 <script setup>
 import { reactive, toRaw } from 'vue'
 // import LangMenu from '@/layout/components/LangMenu.vue'
-import { Form } from 'ant-design-vue'
+import { Form, message } from 'ant-design-vue'
 import { useRouter } from 'vue-router'
 
 import { loginIn } from '@/api/user'
@@ -66,9 +66,14 @@ const handleSubmit = () => {
       loginIn(toRaw(loginForm))
         .then((res) => {
           const { auth } = res.data.data
-          store.commit('auth/GENERATE_ROUTES', auth)
-          store.commit('auth/SET_AUTH', auth)
-          router.push('/dashboard')
+          console.log('auth', auth)
+          if (!['admin', 'user'].includes(auth)) {
+            message.warn('用户名输入admin或者user,密码随便输')
+          } else {
+            store.commit('auth/GENERATE_ROUTES', auth)
+            store.commit('auth/SET_AUTH', auth)
+            router.push('/dashboard')
+          }
         })
         .catch((err) => {
           console.log(err)

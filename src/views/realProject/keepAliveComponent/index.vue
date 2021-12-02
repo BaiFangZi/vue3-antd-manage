@@ -11,6 +11,7 @@
     >
     <div class="alive-content">
       <router-view v-slot="{ Component }">
+        <!-- todo: 打包之后keep-alive不生效，需要绑定一个key -->
         <keep-alive :include="includeRouter">
           <component :is="Component" />
         </keep-alive>
