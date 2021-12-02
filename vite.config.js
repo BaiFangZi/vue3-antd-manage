@@ -53,6 +53,22 @@ export default defineConfig(({ command, mode }) => {
           },
         },
       },
+      terserOptions: {
+        ecma: undefined,
+        compress: {
+          drop_console: true,
+          drop_debugger: true,
+          pure_funcs: ['console.log'],
+        },
+        // ecma: undefined,
+        // warnings: false,
+        // parse: {},
+        // compress: {
+        //   drop_console: true, // 禁用console.* 功能
+        //   drop_debugger: false, //移除debugger语句
+        //   pure_funcs: ['console.log'], // 移除被禁用的console.log语句
+        // },
+      },
     },
     server: {
       //本地服务
