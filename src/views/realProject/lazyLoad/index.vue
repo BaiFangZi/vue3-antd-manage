@@ -4,6 +4,7 @@
     <br />
     <div class="img-wrapper">
       <img v-for="(img, index) in image" :key="index" v-lazy="img" class="img" alt="" />
+      <p></p>
     </div>
   </div>
 </template>

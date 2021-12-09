@@ -25,9 +25,7 @@ function listenerScroll(el) {
   const handler = useThrottle(load, 300)
   console.log(handler)
   load(el)
-  document
-    .querySelector('.img-wrapper')
-    .addEventListener('scroll', () => handler(el))
+  document.querySelector('.img-wrapper').addEventListener('scroll', () => handler(el))
 }
 // 加载真实图片
 function load(el) {

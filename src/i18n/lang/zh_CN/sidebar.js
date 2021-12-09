@@ -68,6 +68,7 @@ const realProject = {
   aliveRouter1: '缓存1',
   aliveRouter2: '缓存2',
   aliveRouter3: '缓存3',
+  smallProblems: '小问题',
 }
 export default {
   dashboard: '首页',

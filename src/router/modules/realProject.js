@@ -117,6 +117,16 @@ export default [
           },
         ],
       },
+      {
+        path: '/smallProblems',
+        name: 'SmallProblems',
+        component: () => import('@/views/realProject/smallProblems/index.vue'),
+        meta: {
+          title: 'smallProblems',
+          auth: ['admin', 'user'],
+          noHidden: true,
+        },
+      },
     ],
   },
 ]
