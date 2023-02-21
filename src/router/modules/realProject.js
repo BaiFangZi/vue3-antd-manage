@@ -127,6 +127,16 @@ export default [
           noHidden: true,
         },
       },
+      {
+        path: '/liveVideo',
+        name: 'LiveVideo',
+        component: () => import('@/views/realProject/liveVideo/index.vue'),
+        meta: {
+          title: 'liveVideo',
+          auth: ['admin', 'user'],
+          noHidden: true,
+        },
+      },
     ],
   },
 ]

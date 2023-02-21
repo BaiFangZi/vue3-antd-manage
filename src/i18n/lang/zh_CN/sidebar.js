@@ -69,6 +69,7 @@ const realProject = {
   aliveRouter2: '缓存2',
   aliveRouter3: '缓存3',
   smallProblems: '小问题',
+  liveVideo: '直播视频',
 }
 export default {
   dashboard: '首页',

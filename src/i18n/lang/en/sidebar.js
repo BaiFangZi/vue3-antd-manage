@@ -66,6 +66,7 @@ const realProject = {
   aliveRouter2: 'AliveRouter2',
   aliveRouter3: 'AliveRouter3',
   smallProblems: 'SmallProblems',
+  liveVideo: 'LiveVideo',
 }
 export default {
   dashboard: 'Dashboard',
