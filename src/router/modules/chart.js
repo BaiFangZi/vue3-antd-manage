@@ -30,6 +30,15 @@ export default [
           auth: ['admin', 'user'],
         },
       },
+      {
+        path: '/threeDimensional',
+        name: 'ThreeDimensional',
+        component: () => import('@/views/charts/threeDimensional.vue'),
+        meta: {
+          title: 'threeDimensional',
+          auth: ['admin', 'user'],
+        },
+      },
 
       {
         path: '/echarts',

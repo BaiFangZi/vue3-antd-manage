@@ -43,6 +43,7 @@ const chart = {
   chart: '图表',
   aMap: '高德地图',
   bMap: '百度地图',
+  threeDimensional: '三维地图',
   echarts: 'Echarts图表',
   basicChart: '基础折线',
   mapChart: 'Echarts地图',

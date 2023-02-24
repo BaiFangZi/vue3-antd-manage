@@ -5,6 +5,7 @@ import styleImport from 'vite-plugin-style-import' //按需加载样式
 
 import SvgIconsPlugin from 'vite-plugin-svg-icons' // 打包生成svg雪碧图
 
+import DC from '@dvgis/vite-plugin-dc'
 // import ViteComponents, { AntDesignVueResolver } from 'vite-plugin-components'
 //  import Components from 'unplugin-vue-components/vite'
 //  import { AntDesignVueResolver } from 'unplugin-vue-components/resolvers'
@@ -44,6 +45,7 @@ export default defineConfig(({ command, mode }) => {
         // default
         symbolId: 'icon-[dir]-[name]',
       }),
+      DC(),
     ],
     build: {
       rollupOptions: {

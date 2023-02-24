@@ -43,6 +43,7 @@ const chart = {
   chart: 'Chart',
   aMap: 'AMap',
   bMap: 'BMap',
+  threeDimensional: 'ThreeDimensional',
   echarts: 'Echarts',
   basicChart: 'BasicChart',
   mapChart: 'Echarts Map',
