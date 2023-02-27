@@ -16,7 +16,7 @@ const options = reactive({
   key: '1c3ff1358b17417f1782dd1ae7bdd00a',
 })
 const handleChangeTab = (key) => {
-  // console.log(key)
+  console.log(key)
   activeKey.value = key
   if (key === 'view') {
     handleViewOnePlace()
@@ -31,10 +31,6 @@ const handleViewCompleted = (map) => {
 }
 const handleViewOnePlace = () => {
   const dcIns = new DCIns(viewer)
-  let layer = viewer.getLayer('layer')
-  if (layer) {
-    layer.clear()
-  }
   dcIns.viewOnePlace({
     lng: 116.2,
     lat: 39.56,
