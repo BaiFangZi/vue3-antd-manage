@@ -1,4 +1,16 @@
 <template>
+  <h2 class=""> 参考demo</h2>
+  <a href="https://www.isqqw.com/" target="_blank">https://www.isqqw.com/</a>
+  <br />
+  <a href="http://ppchart.com/#/" target="_blank">http://ppchart.com/#/</a>
+  <br />
+  <a href="https://www.makeapie.cn/echarts_category/series-bar" target="_blank"
+    >https://www.makeapie.cn/echarts_category/series-bar</a
+  >
+  <h2>文档手册</h2>
+  <a href="https://www.makeapie.cn/doc/echarts/zh/option.html#title" target="_blank"
+    >https://www.makeapie.cn/doc/echarts/zh/option.html#title</a
+  >
   <div>
     <BarChart :option="barOption" />
     <LineChart :option="lineOpption" />

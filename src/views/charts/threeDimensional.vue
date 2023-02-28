@@ -4,7 +4,9 @@
       <a-tab-pane key="view" tab="随便看一个地方"></a-tab-pane>
       <a-tab-pane key="marker" tab="地图打点"></a-tab-pane>
     </a-tabs>
-    <DCMap :options="options" @on-viewer-completed="handleViewCompleted"></DCMap>
+    <div style="width: 100%; height: calc(100% - 60px)">
+      <DCMap :options="options" @on-viewer-completed="handleViewCompleted"></DCMap
+    ></div>
   </div>
 </template>
 <script setup>
@@ -50,9 +52,13 @@ const handleAddMarker = () => {
   })
 }
 </script>
-<style scoped>
+<style scoped lang="scss">
 .map-container {
   width: 100%;
   height: 100%;
+
+  .dc-map {
+    height: 80%;
+  }
 }
 </style>
