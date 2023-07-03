@@ -76,6 +76,21 @@ const handleJsPrintPDF = () => {
     pdf.save('维保记录.pdf')
   })
 }
+// const getContext = () => {
+//   // 解决地图导出图片出现空白
+//   this.$nextTick(() => {
+//     HTMLCanvasElement.prototype.getContext = (function (origFn) {
+//       return function (type, attributes) {
+//         if (type === 'webgl') {
+//           attributes = Object.assign({}, attributes, {
+//             preserveDrawingBuffer: true,
+//           })
+//         }
+//         return origFn.call(this, type, attributes)
+//       }
+//     })(HTMLCanvasElement.prototype.getContext)
+//   })
+// }
 </script>
 
 <style lang="scss">
