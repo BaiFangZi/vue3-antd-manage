@@ -111,6 +111,7 @@ import { onMounted, ref, unref, reactive } from 'vue'
 import { message } from 'ant-design-vue'
 import AddModal from './component/AddModal.vue'
 import UpdateModal from './component/UpdateModal.vue'
+import { cacheRequest } from '@/utils/request'
 const loading = ref(false)
 const tableData = ref([])
 const pagination = ref({
@@ -122,10 +123,15 @@ const pagination = ref({
 
 const selectedRowKeys = ref([])
 const editableData = reactive({})
-const handleQueryTableData = (current, pageSize) => {
+
+const handleQueryTableData = cacheRequest(function (current, pageSize) {
   loading.value = true
   let page = { ...unref(pagination) }
-  queryTable({ current, pageSize }).then((res) => {
+
+  return queryTable({
+    current,
+    pageSize,
+  }).then((res) => {
     tableData.value = res.data.data
     loading.value = false
     pagination.value = {
@@ -135,7 +141,7 @@ const handleQueryTableData = (current, pageSize) => {
       total: res.data.count,
     }
   })
-}
+})
 
 //  mock 数据id随机，页面效果不会双向绑定checkbox，但是实际开发不会存在该问题
 const onSelectChange = (keys) => {
@@ -189,6 +195,8 @@ const save = (id) => {
 
 onMounted(() => {
   const { current, pageSize } = unref(pagination)
+  handleQueryTableData(current, pageSize)
+  handleQueryTableData(current, pageSize)
   handleQueryTableData(current, pageSize)
 })
 </script>

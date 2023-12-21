@@ -12,8 +12,8 @@ const request = axios.create({
 
 request.interceptors.request.use(
   (config) => {
-    removePendingRequest(config)
-    addPendingRequest(config)
+    // removePendingRequest(config)
+    // addPendingRequest(config)
     // const { removePendingRequest, addPendingRequest } = useAxiosCancel(config)
     return config
   },
@@ -50,16 +50,16 @@ function generateReqKey(config) {
 const pendingRequest = new Map() // 存储请求唯一标识key
 
 // 根据请求标识创建对用的cancelToken函数
-function addPendingRequest(config) {
-  const requestKey = generateReqKey(config)
-  config.cancelToken =
-    config.cancelToken ||
-    new axios.CancelToken((cancel) => {
-      if (!pendingRequest.has(requestKey)) {
-        pendingRequest.set(requestKey, cancel)
-      }
-    })
-}
+// function addPendingRequest(config) {
+//   const requestKey = generateReqKey(config)
+//   config.cancelToken =
+//     config.cancelToken ||
+//     new axios.CancelToken((cancel) => {
+//       if (!pendingRequest.has(requestKey)) {
+//         pendingRequest.set(requestKey, cancel)
+//       }
+//     })
+// }
 // export let axiosCancel
 // 根据请求标识移除对应的cancelToken函数，取消请求
 export function removePendingRequest(config) {
@@ -75,3 +75,13 @@ export const localRequest = axios.create({
   baseURL: VITE_MODE == 'development' ? '/local-test' : VITE_LOCAL_TEST_URL,
 })
 // export
+
+export const cacheRequest = (request) => {
+  const cache = Symbol('cache')
+  return (...args) => {
+    if (!request.prototype[cache]) {
+      request.prototype[cache] = request(...args)
+    }
+    return request.prototype[cache]
+  }
+}
