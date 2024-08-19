@@ -66,6 +66,15 @@ export default [
           auth: ['admin', 'user'],
         },
       },
+      {
+        path: '/flow',
+        name: 'Flow',
+        component: () => import('@/views/plugins-demo/flow/index.vue'),
+        meta: {
+          title: 'flow',
+          auth: ['admin', 'user'],
+        },
+      }
     ],
   },
 ]

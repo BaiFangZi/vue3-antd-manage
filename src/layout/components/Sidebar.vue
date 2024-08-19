@@ -55,8 +55,8 @@ const SubMenu = {
 <script setup>
 import { useStore } from 'vuex'
 import { useRouter, useRoute } from 'vue-router'
-import { ref } from '@vue/reactivity'
-import { watch } from '@vue/runtime-core'
+import { ref, watch } from 'vue'
+
 defineProps({
   collapsed: Boolean,
 })

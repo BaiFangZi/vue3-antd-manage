@@ -97,10 +97,7 @@ import qqSrc from '@/assets/icon/qq.svg'
 import weixinSrc from '@/assets/icon/weixin.svg'
 import juejinSrc from '@/assets/icon/juejin.svg'
 import zhihuSrc from '@/assets/icon/zhihu.svg'
-import { createFromIconfontCN } from '@ant-design/icons-vue'
-const IconFont = createFromIconfontCN({
-  scriptUrl: '//at.alicdn.com/t/font_2853787_zrjbr6b8rnh.js',
-})
+
 // const
 </script>
 

@@ -5,7 +5,8 @@ import App from './App.vue'
 import router from '@/router/index.js'
 import store from '@/store'
 import { setupI18n } from '@/i18n'
-import { setupAntd } from '@/plugins/antd'
+import Antd from 'ant-design-vue';
+// import { setupAntd } from '@/plugins/antd'
 import { setupComponent } from '@/components'
 import { setupDirective } from '@/directives'
 
@@ -50,7 +51,11 @@ router.afterEach((to, from) => {
 })
 const app = createApp(App)
 // 注册 ant-design-vue 组件和图标
-setupAntd(app)
+
+
+app.use(Antd)
+
+// setupAntd(app)
 // 注册全局组件
 setupComponent(app)
 // 注册自定义指令

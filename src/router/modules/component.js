@@ -12,15 +12,15 @@ export default [
       path: '/table',
     },
     children: [
-      {
-        path: '/icon',
-        name: 'Icon',
-        component: () => import('@/views/components-demo/icon/index.vue'),
-        meta: {
-          title: 'icon',
-          auth: ['admin', 'user'],
-        },
-      },
+      // {
+      //   path: '/icon',
+      //   name: 'Icon',
+      //   component: () => import('@/views/components-demo/icon/index.vue'),
+      //   meta: {
+      //     title: 'icon',
+      //     auth: ['admin', 'user'],
+      //   },
+      // },
       {
         path: '/table',
         name: 'Table',

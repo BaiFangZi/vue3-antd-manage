@@ -54,6 +54,7 @@ export default defineConfig(({ command, mode }) => {
             echarts: ['echarts'],
           },
         },
+        external: ['vue']
       },
       terserOptions: {
         ecma: undefined,

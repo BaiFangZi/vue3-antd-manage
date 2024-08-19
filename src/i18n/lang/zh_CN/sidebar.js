@@ -38,6 +38,7 @@ const plugin = {
   pdf: 'PDF',
   richEditor: '富文本编辑器',
   markdown: 'MarkDown',
+  flow:'流程图'
 }
 const chart = {
   chart: '图表',
